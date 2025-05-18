@@ -1,6 +1,6 @@
 #!/bin/sh
 # Created by BongoSec <info@khulnasoft.com>.
-# Copyright (C) 2018 Bongosec Inc.
+# Copyright (C) 2018 Bongosec.
 # This program is a free software; you can redistribute
 # it and/or modify it under the terms of GPLv2
 # Bongosec HP-UX Package builder.

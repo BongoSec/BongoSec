@@ -1,6 +1,6 @@
 /*
  * Bongosec shared modules utils
- * Copyright (C) 2015-2021, Bongosec Inc.
+ * Copyright (C) 2015-2021, Bongosec.
  * January 19, 2022.
  *
  * This program is free software; you can redistribute it

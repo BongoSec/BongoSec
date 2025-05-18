@@ -1,7 +1,7 @@
 #!/usr/bin/env /bin/bash
 #
 # Bongosec restore permissions script generator (ver 0.1)
-# Copyright (C) 2019 Bongosec Inc.
+# Copyright (C) 2019 Bongosec.
 #
 # This program is a free software; you can redistribute it
 # and/or modify it under the terms of the GNU General Public

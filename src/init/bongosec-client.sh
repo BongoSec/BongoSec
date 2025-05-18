@@ -16,7 +16,7 @@ REVISION="alpha0"
 TYPE="agent"
 
 ###  Do not modify below here ###
-AUTHOR="Bongosec Inc."
+AUTHOR="Bongosec."
 DAEMONS="bongosec-modulesd bongosec-logcollector bongosec-syscheckd bongosec-agentd bongosec-execd"
 
 # Reverse order of daemons

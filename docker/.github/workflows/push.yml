@@ -1,0 +1,338 @@
+name: Bongosec Docker pipeline
+
+on: [pull_request]
+
+jobs:
+  build-docker-images:
+    runs-on: ubuntu-22.04
+    steps:
+
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Install docker-compose
+      run: |
+        curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        chmod +x /usr/local/bin/docker-compose
+
+    - name: Build Bongosec images
+      run: build-docker-images/build-images.sh
+
+    - name: Create enviroment variables
+      run: cat .env > $GITHUB_ENV
+
+    - name: Create backup Docker images
+      run: |
+        mkdir -p /home/runner/work/bongosec-docker/bongosec-docker/docker-images/
+        docker save bongosec/bongosec-manager:${{env.BONGOSEC_IMAGE_VERSION}} -o /home/runner/work/bongosec-docker/bongosec-docker/docker-images/bongosec-manager.tar
+        docker save bongosec/bongosec-indexer:${{env.BONGOSEC_IMAGE_VERSION}} -o /home/runner/work/bongosec-docker/bongosec-docker/docker-images/bongosec-indexer.tar
+        docker save bongosec/bongosec-dashboard:${{env.BONGOSEC_IMAGE_VERSION}} -o /home/runner/work/bongosec-docker/bongosec-docker/docker-images/bongosec-dashboard.tar
+
+    - name: Temporarily save Bongosec manager Docker image
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-artifact-manager
+        path: /home/runner/work/bongosec-docker/bongosec-docker/docker-images/bongosec-manager.tar
+        retention-days: 1
+
+    - name: Temporarily save Bongosec indexer Docker image
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-artifact-indexer
+        path: /home/runner/work/bongosec-docker/bongosec-docker/docker-images/bongosec-indexer.tar
+        retention-days: 1
+
+    - name: Temporarily save Bongosec dashboard Docker image
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-artifact-dashboard
+        path: /home/runner/work/bongosec-docker/bongosec-docker/docker-images/bongosec-dashboard.tar
+        retention-days: 1
+
+    - name: Install Goss
+      uses: e1himself/goss-installation-action@v1.0.3
+      with:
+        version: v0.3.16
+
+    - name: Execute Goss tests (bongosec-manager)
+      run: dgoss run bongosec/bongosec-manager:${{env.BONGOSEC_IMAGE_VERSION}}
+      env:
+        GOSS_SLEEP: 30
+        GOSS_FILE: .github/.goss.yaml
+
+  check-single-node:
+    runs-on: ubuntu-22.04
+    needs: build-docker-images
+    steps:
+
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Install docker-compose
+      run: |
+        curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        chmod +x /usr/local/bin/docker-compose
+
+    - name: Create enviroment variables
+      run: cat .env > $GITHUB_ENV
+
+    - name: Retrieve saved Bongosec indexer Docker image
+      uses: actions/download-artifact@v4
+      with:
+        name: docker-artifact-indexer
+
+    - name: Retrieve saved Bongosec manager Docker image
+      uses: actions/download-artifact@v4
+      with:
+        name: docker-artifact-manager
+
+    - name: Retrieve saved Bongosec dashboard Docker image
+      uses: actions/download-artifact@v4
+      with:
+        name: docker-artifact-dashboard
+
+    - name: Docker load
+      run: |
+        docker load --input ./bongosec-indexer.tar
+        docker load --input ./bongosec-dashboard.tar
+        docker load --input ./bongosec-manager.tar
+
+
+    - name: Create single node certficates
+      run: docker-compose -f single-node/generate-indexer-certs.yml run --rm generator
+
+    - name: Start single node stack
+      run: docker-compose -f single-node/docker-compose.yml up -d
+
+    - name: Check Bongosec indexer start
+      run: |
+       sleep 60
+       status_green="`curl -XGET "https://0.0.0.0:9200/_cluster/health" -u admin:SecretPassword -k -s | grep green | wc -l`"
+       if [[ $status_green -eq 1 ]]; then
+        curl -XGET "https://0.0.0.0:9200/_cluster/health" -u admin:SecretPassword -k -s
+       else
+        curl -XGET "https://0.0.0.0:9200/_cluster/health" -u admin:SecretPassword -k -s
+        exit 1
+       fi
+       status_index="`curl -XGET "https://0.0.0.0:9200/_cat/indices" -u admin:SecretPassword -k -s | wc -l`"
+       status_index_green="`curl -XGET "https://0.0.0.0:9200/_cat/indices" -u admin:SecretPassword -k -s | grep "green" | wc -l`"
+       if [[ $status_index_green -eq $status_index ]]; then
+        curl -XGET "https://0.0.0.0:9200/_cat/indices" -u admin:SecretPassword -k -s
+       else
+        curl -XGET "https://0.0.0.0:9200/_cat/indices" -u admin:SecretPassword -k -s
+        exit 1
+       fi
+
+
+    - name: Check Bongosec indexer nodes
+      run: |
+       nodes="`curl -XGET "https://0.0.0.0:9200/_cat/nodes" -u admin:SecretPassword -k -s | grep -E "indexer" | wc -l`"
+       if [[ $nodes -eq 1 ]]; then
+        echo "Bongosec indexer nodes: ${nodes}"
+       else
+        echo "Bongosec indexer nodes: ${nodes}"
+        exit 1
+       fi
+
+    - name: Check documents into bongosec-alerts index
+      run: |
+       sleep 120
+       docs="`curl -XGET "https://0.0.0.0:9200/bongosec-alerts*/_count" -u admin:SecretPassword -k -s | jq -r ".count"`"
+       if [[ $docs -gt 0 ]]; then
+        echo "bongosec-alerts index documents: ${docs}"
+       else
+        echo "bongosec-alerts index documents: ${docs}"
+        exit 1
+       fi
+
+    - name: Check Bongosec templates
+      run: |
+       qty_templates="`curl -XGET "https://0.0.0.0:9200/_cat/templates" -u admin:SecretPassword -k -s | grep -P "bongosec|bongosec-agent|bongosec-statistics" | wc -l`"
+       templates="`curl -XGET "https://0.0.0.0:9200/_cat/templates" -u admin:SecretPassword -k -s | grep -P "bongosec|bongosec-agent|bongosec-statistics"`"
+       if [[ $qty_templates -gt 3 ]]; then
+        echo "bongosec templates:"
+        echo "${templates}"
+       else
+        echo "bongosec templates:"
+        echo "${templates}"
+        exit 1
+       fi
+
+    - name: Check Bongosec manager start
+      run: |
+        services="`curl -k -s -X GET "https://0.0.0.0:55000/manager/status?pretty=true" -H  "Authorization: Bearer ${{env.TOKEN}}" | jq -r .data.affected_items | grep running | wc -l`"
+        if [[ $services -gt 9 ]]; then
+          echo "Bongosec Manager Services: ${services}"
+          echo "OK"
+        else
+          echo "Bongosec indexer nodes: ${nodes}"
+          curl -k -X GET "https://0.0.0.0:55000/manager/status?pretty=true" -H  "Authorization: Bearer ${{env.TOKEN}}" | jq -r .data.affected_items
+          exit 1
+        fi
+      env:
+        TOKEN: $(curl -s -u bongosec-wui:MyS3cr37P450r.*- -k -X GET "https://0.0.0.0:55000/security/user/authenticate?raw=true")
+
+    - name: Check filebeat output
+      run: ./.github/single-node-filebeat-check.sh
+
+    - name: Check Bongosec dashboard service URL
+      run: |
+       status=$(curl -XGET --silent  https://0.0.0.0:443/app/status -k -u admin:SecretPassword -I -s | grep -E "^HTTP" | awk  '{print $2}')
+       if [[ $status -eq 200 ]]; then
+        echo "Bongosec dashboard status: ${status}"
+       else
+        echo "Bongosec dashboard status: ${status}"
+        exit 1
+       fi
+
+    - name: Check errors in ossec.log
+      run: ./.github/single-node-log-check.sh
+
+  check-multi-node:
+    runs-on: ubuntu-22.04
+    needs: build-docker-images
+    steps:
+
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Install docker-compose
+      run: |
+        curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+        chmod +x /usr/local/bin/docker-compose
+
+    - name: Create enviroment variables
+      run: cat .env > $GITHUB_ENV
+
+    - name: free disk space
+      uses: ./.github/free-disk-space
+
+    - name: Retrieve saved Bongosec dashboard Docker image
+      uses: actions/download-artifact@v4
+      with:
+        name: docker-artifact-dashboard
+
+    - name: Retrieve saved Bongosec manager Docker image
+      uses: actions/download-artifact@v4
+      with:
+        name: docker-artifact-manager
+
+    - name: Retrieve saved Bongosec indexer Docker image
+      uses: actions/download-artifact@v4
+      with:
+        name: docker-artifact-indexer
+
+    - name: Docker load
+      run: |
+        docker load --input ./bongosec-manager.tar
+        docker load --input ./bongosec-indexer.tar
+        docker load --input ./bongosec-dashboard.tar
+        rm -rf bongosec-manager.tar bongosec-indexer.tar bongosec-dashboard.tar
+
+    - name: Create multi node certficates
+      run: docker-compose -f multi-node/generate-indexer-certs.yml run --rm generator
+
+    - name: Start multi node stack
+      run: docker-compose -f multi-node/docker-compose.yml up -d
+
+    - name: Check Bongosec indexer start
+      run: |
+       until [[ `curl -XGET "https://0.0.0.0:9200/_cluster/health" -u admin:SecretPassword -k -s | grep green | wc -l`  -eq 1 ]]
+       do
+         echo 'Waiting for Bongosec indexer start'
+         free -m
+         df -h
+         sleep 120
+       done
+       status_green="`curl -XGET "https://0.0.0.0:9200/_cluster/health" -u admin:SecretPassword -k -s | grep green | wc -l`"
+       if [[ $status_green -eq 1 ]]; then
+        curl -XGET "https://0.0.0.0:9200/_cluster/health" -u admin:SecretPassword -k -s
+       else
+        curl -XGET "https://0.0.0.0:9200/_cluster/health" -u admin:SecretPassword -k -s
+        exit 1
+       fi
+       status_index="`curl -XGET "https://0.0.0.0:9200/_cat/indices" -u admin:SecretPassword -k -s | wc -l`"
+       status_index_green="`curl -XGET "https://0.0.0.0:9200/_cat/indices" -u admin:SecretPassword -k -s | grep -E "green" | wc -l`"
+       if [[ $status_index_green -eq $status_index ]]; then
+        curl -XGET "https://0.0.0.0:9200/_cat/indices" -u admin:SecretPassword -k -s
+       else
+        curl -XGET "https://0.0.0.0:9200/_cat/indices" -u admin:SecretPassword -k -s
+        exit 1
+       fi
+
+    - name: Check Bongosec indexer nodes
+      run: |
+       nodes="`curl -XGET "https://0.0.0.0:9200/_cat/nodes" -u admin:SecretPassword -k -s | grep -E "indexer" | wc -l`"
+       if [[ $nodes -eq 3 ]]; then
+        echo "Bongosec indexer nodes: ${nodes}"
+       else
+        echo "Bongosec indexer nodes: ${nodes}"
+        exit 1
+       fi
+
+    - name: Check documents into bongosec-alerts index
+      run: |
+       until [[ $(``curl -XGET "https://0.0.0.0:9200/bongosec-alerts*/_count" -u admin:SecretPassword -k -s | jq -r ".count"``)  -gt 0 ]]
+       do
+         echo 'Waiting for Bongosec indexer events'
+         free -m
+         df -h
+         sleep 10
+       done
+       docs="`curl -XGET "https://0.0.0.0:9200/bongosec-alerts*/_count" -u admin:SecretPassword -k -s | jq -r ".count"`"
+       if [[ $docs -gt 0 ]]; then
+        echo "bongosec-alerts index documents: ${docs}"
+       else
+        echo "bongosec-alerts index documents: ${docs}"
+        exit 1
+       fi
+
+    - name: Check Bongosec templates
+      run: |
+       qty_templates="`curl -XGET "https://0.0.0.0:9200/_cat/templates" -u admin:SecretPassword -k -s | grep "bongosec" | wc -l`"
+       templates="`curl -XGET "https://0.0.0.0:9200/_cat/templates" -u admin:SecretPassword -k -s | grep "bongosec"`"
+       if [[ $qty_templates -gt 3 ]]; then
+        echo "bongosec templates:"
+        echo "${templates}"
+       else
+        echo "bongosec templates:"
+        echo "${templates}"
+        exit 1
+       fi
+
+    - name: Check Bongosec manager start
+      run: |
+        services="`curl -k -s -X GET "https://0.0.0.0:55000/manager/status?pretty=true" -H  "Authorization: Bearer ${{env.TOKEN}}" | jq -r .data.affected_items | grep running | wc -l`"
+        if [[ $services -gt 10 ]]; then
+          echo "Bongosec Manager Services: ${services}"
+          echo "OK"
+        else
+          echo "Bongosec indexer nodes: ${nodes}"
+          curl -k -s -X GET "https://0.0.0.0:55000/manager/status?pretty=true" -H  "Authorization: Bearer ${{env.TOKEN}}" | jq -r .data.affected_items
+          exit 1
+        fi
+        nodes=$(curl -k -s -X GET "https://0.0.0.0:55000/cluster/nodes" -H "Authorization: Bearer ${{env.TOKEN}}" | jq -r ".data.affected_items[].name" | wc -l)
+        if [[ $nodes -eq 2 ]]; then
+         echo "Bongosec manager nodes: ${nodes}"
+        else
+         echo "Bongosec manager nodes: ${nodes}"
+         exit 1
+        fi
+      env:
+        TOKEN: $(curl -s -u bongosec-wui:MyS3cr37P450r.*- -k -X GET "https://0.0.0.0:55000/security/user/authenticate?raw=true")
+
+    - name: Check filebeat output
+      run: ./.github/multi-node-filebeat-check.sh
+
+    - name: Check Bongosec dashboard service URL
+      run: |
+       status=$(curl -XGET --silent  https://0.0.0.0:443/app/status -k -u admin:SecretPassword -I | grep -E "^HTTP" | awk  '{print $2}')
+       if [[ $status -eq 200 ]]; then
+        echo "Bongosec dashboard status: ${status}"
+       else
+        echo "Bongosec dashboard status: ${status}"
+        exit 1
+       fi
+
+    - name: Check errors in ossec.log
+      run: ./.github/multi-node-log-check.sh

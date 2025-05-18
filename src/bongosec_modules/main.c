@@ -117,7 +117,7 @@ int main(int argc, char **argv)
 
 void wm_help()
 {
-    print_out("Bongosec Module Manager - %s\nBongosec Inc.", __ossec_version);
+    print_out("Bongosec Module Manager - %s\nBongosec.", __ossec_version);
     print_out(" ");
     print_out("Usage: %s -[d|f|h|t]", ARGV0);
     print_out(" ");

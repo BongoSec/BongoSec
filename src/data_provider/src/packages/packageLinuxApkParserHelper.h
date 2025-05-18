@@ -1,6 +1,6 @@
 /*
  * Bongosec SYSINFO
- * Copyright (C) 2015-2021, Bongosec Inc.
+ * Copyright (C) 2015-2021, Bongosec.
  * January 03, 2023.
  *
  * This program is free software; you can redistribute it

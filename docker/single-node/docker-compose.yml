@@ -1,0 +1,115 @@
+# Bongosec App Copyright (C) 2017, Bongosec. (License GPLv2)
+version: '3.7'
+
+services:
+  bongosec.manager:
+    image: bongosec/bongosec-manager:5.0.0
+    hostname: bongosec.manager
+    restart: always
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 655360
+        hard: 655360
+    ports:
+      - "1514:1514"
+      - "1515:1515"
+      - "514:514/udp"
+      - "55000:55000"
+    environment:
+      - INDEXER_URL=https://bongosec.indexer:9200
+      - INDEXER_USERNAME=admin
+      - INDEXER_PASSWORD=SecretPassword
+      - FILEBEAT_SSL_VERIFICATION_MODE=full
+      - SSL_CERTIFICATE_AUTHORITIES=/etc/ssl/root-ca.pem
+      - SSL_CERTIFICATE=/etc/ssl/filebeat.pem
+      - SSL_KEY=/etc/ssl/filebeat.key
+      - API_USERNAME=bongosec-wui
+      - API_PASSWORD=MyS3cr37P450r.*-
+    volumes:
+      - bongosec_api_configuration:/var/ossec/api/configuration
+      - bongosec_etc:/var/ossec/etc
+      - bongosec_logs:/var/ossec/logs
+      - bongosec_queue:/var/ossec/queue
+      - bongosec_var_multigroups:/var/ossec/var/multigroups
+      - bongosec_integrations:/var/ossec/integrations
+      - bongosec_active_response:/var/ossec/active-response/bin
+      - bongosec_agentless:/var/ossec/agentless
+      - bongosec_wodles:/var/ossec/wodles
+      - filebeat_etc:/etc/filebeat
+      - filebeat_var:/var/lib/filebeat
+      - ./config/bongosec_indexer_ssl_certs/root-ca-manager.pem:/etc/ssl/root-ca.pem
+      - ./config/bongosec_indexer_ssl_certs/bongosec.manager.pem:/etc/ssl/filebeat.pem
+      - ./config/bongosec_indexer_ssl_certs/bongosec.manager-key.pem:/etc/ssl/filebeat.key
+      - ./config/bongosec_cluster/bongosec_manager.conf:/bongosec-config-mount/etc/ossec.conf
+
+  bongosec.indexer:
+    image: bongosec/bongosec-indexer:5.0.0
+    hostname: bongosec.indexer
+    restart: always
+    ports:
+      - "9200:9200"
+    environment:
+      - "OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - bongosec-indexer-data:/var/lib/bongosec-indexer
+      - ./config/bongosec_indexer_ssl_certs/root-ca.pem:/usr/share/bongosec-indexer/certs/root-ca.pem
+      - ./config/bongosec_indexer_ssl_certs/bongosec.indexer-key.pem:/usr/share/bongosec-indexer/certs/bongosec.indexer.key
+      - ./config/bongosec_indexer_ssl_certs/bongosec.indexer.pem:/usr/share/bongosec-indexer/certs/bongosec.indexer.pem
+      - ./config/bongosec_indexer_ssl_certs/admin.pem:/usr/share/bongosec-indexer/certs/admin.pem
+      - ./config/bongosec_indexer_ssl_certs/admin-key.pem:/usr/share/bongosec-indexer/certs/admin-key.pem
+      - ./config/bongosec_indexer/bongosec.indexer.yml:/usr/share/bongosec-indexer/opensearch.yml
+      - ./config/bongosec_indexer/internal_users.yml:/usr/share/bongosec-indexer/opensearch-security/internal_users.yml
+
+  bongosec.dashboard:
+    image: bongosec/bongosec-dashboard:5.0.0
+    hostname: bongosec.dashboard
+    restart: always
+    ports:
+      - 443:5601
+    environment:
+      - INDEXER_USERNAME=admin
+      - INDEXER_PASSWORD=SecretPassword
+      - BONGOSEC_API_URL=https://bongosec.manager
+      - DASHBOARD_USERNAME=kibanaserver
+      - DASHBOARD_PASSWORD=kibanaserver
+      - API_USERNAME=bongosec-wui
+      - API_PASSWORD=MyS3cr37P450r.*-
+    volumes:
+      - ./config/bongosec_indexer_ssl_certs/bongosec.dashboard.pem:/usr/share/bongosec-dashboard/certs/bongosec-dashboard.pem
+      - ./config/bongosec_indexer_ssl_certs/bongosec.dashboard-key.pem:/usr/share/bongosec-dashboard/certs/bongosec-dashboard-key.pem
+      - ./config/bongosec_indexer_ssl_certs/root-ca.pem:/usr/share/bongosec-dashboard/certs/root-ca.pem
+      - ./config/bongosec_dashboard/opensearch_dashboards.yml:/usr/share/bongosec-dashboard/config/opensearch_dashboards.yml
+      - ./config/bongosec_dashboard/bongosec.yml:/usr/share/bongosec-dashboard/data/bongosec/config/bongosec.yml
+      - bongosec-dashboard-config:/usr/share/bongosec-dashboard/data/bongosec/config
+      - bongosec-dashboard-custom:/usr/share/bongosec-dashboard/plugins/bongosec/public/assets/custom
+    depends_on:
+      - bongosec.indexer
+    links:
+      - bongosec.indexer:bongosec.indexer
+      - bongosec.manager:bongosec.manager
+
+volumes:
+  bongosec_api_configuration:
+  bongosec_etc:
+  bongosec_logs:
+  bongosec_queue:
+  bongosec_var_multigroups:
+  bongosec_integrations:
+  bongosec_active_response:
+  bongosec_agentless:
+  bongosec_wodles:
+  filebeat_etc:
+  filebeat_var:
+  bongosec-indexer-data:
+  bongosec-dashboard-config:
+  bongosec-dashboard-custom:

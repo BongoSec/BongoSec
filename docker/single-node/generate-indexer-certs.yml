@@ -1,0 +1,10 @@
+# Bongosec App Copyright (C) 2017, Bongosec. (License GPLv2)
+version: '3'
+
+services:
+  generator:
+    image: bongosec/bongosec-certs-generator:0.0.2
+    hostname: bongosec-certs-generator
+    volumes:
+      - ./config/bongosec_indexer_ssl_certs/:/certificates/
+      - ./config/certs.yml:/config/certs.yml

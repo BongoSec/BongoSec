@@ -70,7 +70,7 @@
 /* Some global names */
 #define __ossec_name    "Bongosec"
 #define __ossec_version "v5.0.0"
-#define __author        "Bongosec Inc."
+#define __author        "Bongosec."
 #define __contact       "info@bongosec.github.io"
 #define __site          "http://www.bongosec.github.io"
 #define __license       "\

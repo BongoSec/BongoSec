@@ -1,0 +1,5 @@
+single-node/config/bongosec_indexer_ssl_certs/*.pem
+single-node/config/bongosec_indexer_ssl_certs/*.key
+multi-node/config/bongosec_indexer_ssl_certs/*.pem
+multi-node/config/bongosec_indexer_ssl_certs/*.key
+*.log

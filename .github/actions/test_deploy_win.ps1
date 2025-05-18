@@ -1,4 +1,4 @@
-# Copyright (C) 2015, Bongosec Inc.
+# Copyright (C) 2015, Bongosec.
 #
 # This program is free software; you can redistribute it
 # and/or modify it under the terms of the GNU General Public
@@ -111,8 +111,8 @@ function test($vars)
 
 }
 
-Write-Output "Download package: https://s3.us-west-1.amazonaws.com/packages-dev.bongosec.com/warehouse/pullrequests/$MAJOR.$MINOR/windows/bongosec-agent-$VERSION-0.commit$SHA.msi"
-Invoke-WebRequest -Uri "https://s3.us-west-1.amazonaws.com/packages-dev.bongosec.com/warehouse/pullrequests/$MAJOR.$MINOR/windows/bongosec-agent-$VERSION-0.commit$SHA.msi" -OutFile "bongosec-agent-$VERSION-0.commit$SHA.msi"
+Write-Output "Download package: https://s3.us-west-1.amazonaws.com/packages-dev.bongosec.github.io/warehouse/pullrequests/$MAJOR.$MINOR/windows/bongosec-agent-$VERSION-0.commit$SHA.msi"
+Invoke-WebRequest -Uri "https://s3.us-west-1.amazonaws.com/packages-dev.bongosec.github.io/warehouse/pullrequests/$MAJOR.$MINOR/windows/bongosec-agent-$VERSION-0.commit$SHA.msi" -OutFile "bongosec-agent-$VERSION-0.commit$SHA.msi"
 
 install_bongosec "BONGOSEC_MANAGER=1.1.1.1 BONGOSEC_MANAGER_PORT=7777 BONGOSEC_PROTOCOL=udp BONGOSEC_REGISTRATION_SERVER=2.2.2.2 BONGOSEC_REGISTRATION_PORT=8888 BONGOSEC_REGISTRATION_PASSWORD=password BONGOSEC_KEEP_ALIVE_INTERVAL=10 BONGOSEC_TIME_RECONNECT=10 BONGOSEC_REGISTRATION_CA=/var/ossec/etc/testsslmanager.cert BONGOSEC_REGISTRATION_CERTIFICATE=/var/ossec/etc/testsslmanager.cert BONGOSEC_REGISTRATION_KEY=/var/ossec/etc/testsslmanager.key BONGOSEC_AGENT_NAME=test-agent BONGOSEC_AGENT_GROUP=test-group ENROLLMENT_DELAY=10"
 test "BONGOSEC_MANAGER BONGOSEC_MANAGER_PORT BONGOSEC_PROTOCOL BONGOSEC_REGISTRATION_SERVER BONGOSEC_REGISTRATION_PORT BONGOSEC_REGISTRATION_PASSWORD BONGOSEC_KEEP_ALIVE_INTERVAL BONGOSEC_TIME_RECONNECT BONGOSEC_REGISTRATION_CA BONGOSEC_REGISTRATION_CERTIFICATE BONGOSEC_REGISTRATION_KEY BONGOSEC_AGENT_NAME BONGOSEC_AGENT_GROUP ENROLLMENT_DELAY "

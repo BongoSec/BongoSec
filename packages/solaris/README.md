@@ -21,4 +21,4 @@ If you want to contribute to our project please don't hesitate to send a pull re
 ## License and copyright
 
 BONGOSEC
-Copyright (C) 2015 Bongosec Inc.  (License GPLv2)
+Copyright (C) 2015 Bongosec.  (License GPLv2)

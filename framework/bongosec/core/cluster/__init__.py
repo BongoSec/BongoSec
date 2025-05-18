@@ -6,7 +6,7 @@
 
 __version__ = '5.0.0'
 __revision__ = 'alpha0'
-__author__ = "Bongosec Inc"
+__author__ = "Bongosec"
 __bongosec_name__ = "Bongosec"
 __licence__ = "\
 This program is free software; you can redistribute it and/or modify\n\

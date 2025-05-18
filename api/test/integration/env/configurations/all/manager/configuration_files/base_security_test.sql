@@ -1,6 +1,6 @@
 /*
  * SQL Schema all denied tests
- * Copyright (C) 2015, Bongosec Inc.
+ * Copyright (C) 2015, Bongosec.
  * February 12, 2021.
  * This program is a free software, you can redistribute it
  * and/or modify it under the terms of GPLv2.

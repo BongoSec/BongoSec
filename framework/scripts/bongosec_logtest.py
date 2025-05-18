@@ -549,7 +549,7 @@ class Bongosec:
         str
             Bongosec description.
         """
-        return f"Bongosec {Bongosec.get_version_str()} - Bongosec Inc."
+        return f"Bongosec {Bongosec.get_version_str()} - Bongosec."
 
     def get_license() -> str:
         """Get Bongosec License statement.

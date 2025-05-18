@@ -16,7 +16,7 @@ assignees: ''
 Whenever possible, issues should be created for bug reporting and feature requests.
 For questions related to the user experience, please refer:
 - Bongosec mailing list: https://groups.google.com/forum/#!forum/bongosec
-- Join Bongosec on Slack: https://bongosec.com/community/join-us-on-slack
+- Join Bongosec on Slack: https://bongosec.github.io/community/join-us-on-slack
 -->
 
 ## Checks

@@ -35,7 +35,7 @@ jobs:
       - name: Download m365proxy and config http for msgraph module
         run: |
           sed -i 's/https:\/\/%s\/%s/http:\/\/%s\/%s/g' src/bongosec_modules/wm_ms_graph.h
-          curl -L http://packages.bongosec.com/utils/m365proxy/m365proxy.tar.gz | \
+          curl -L http://packages.bongosec.github.io/utils/m365proxy/m365proxy.tar.gz | \
           tar zvx -C /tmp/
       - name: "Install a compatible CMake"
         uses: ./.github/actions/reinstall_cmake

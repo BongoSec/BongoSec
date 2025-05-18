@@ -15,13 +15,13 @@ assignees: ''
 Whenever possible, issues should be created for bug reporting and feature requests.
 For questions related to the user experience, please refer:
 - Bongosec mailing list: https://groups.google.com/forum/#!forum/bongosec
-- Join Bongosec on Slack: https://bongosec.com/community/join-us-on-slack
+- Join Bongosec on Slack: https://bongosec.github.io/community/join-us-on-slack
 
 Please fill the table above. Feel free to extend it at your convenience.
 -->
 
 <!--
 
-You may want to set debug options `<component>.debug=2` (see https://documentation.bongosec.com/current/user-manual/reference/internal-options.html) to get verbose logs. This may help investigate the issue.
+You may want to set debug options `<component>.debug=2` (see https://documentation.bongosec.github.io/current/user-manual/reference/internal-options.html) to get verbose logs. This may help investigate the issue.
 
 -->

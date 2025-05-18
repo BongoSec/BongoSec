@@ -171,7 +171,7 @@ def test_main(input_mock, argparse_mock, bongosec_logtest_class_mock, init_logge
     register_mock.assert_called_once_with(bongosec_logtest_class_mock.return_value.remove_last_session)
     sys_exit_mock.assert_has_calls([call(0), call(1)])
 
-    logger_info_mock.assert_has_calls([call('%s', 'Bongosec ERROR - Bongosec Inc.'),
+    logger_info_mock.assert_has_calls([call('%s', 'Bongosec ERROR - Bongosec.'),
                                        call('%s', '\nThis program is free software; you can redistribute it and/or '
                                                   'modify\nit under the terms of the GNU General Public License '
                                                   '(version 2) as\npublished by the Free Software Foundation. For more '
@@ -577,7 +577,7 @@ def test_bongosec_get_version_str(get_info_mock):
 @patch('scripts.bongosec_logtest.Bongosec.get_version_str', return_value='')
 def test_bongosec_get_description(get_version_mock):
     """Test if the description is being properly retrieved."""
-    assert create_bongosec_class().get_description() == f"Bongosec {get_version_mock.return_value} - Bongosec Inc."
+    assert create_bongosec_class().get_description() == f"Bongosec {get_version_mock.return_value} - Bongosec."
     get_version_mock.assert_called_once_with()
 
 

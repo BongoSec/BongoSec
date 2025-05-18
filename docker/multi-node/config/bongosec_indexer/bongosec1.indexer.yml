@@ -1,0 +1,38 @@
+network.host: bongosec1.indexer
+node.name: bongosec1.indexer
+cluster.initial_master_nodes:
+        - bongosec1.indexer
+        - bongosec2.indexer
+        - bongosec3.indexer
+cluster.name: "bongosec-cluster"
+discovery.seed_hosts:
+        - bongosec1.indexer
+        - bongosec2.indexer
+        - bongosec3.indexer
+node.max_local_storage_nodes: "3"
+path.data: /var/lib/bongosec-indexer
+path.logs: /var/log/bongosec-indexer
+plugins.security.ssl.http.pemcert_filepath: ${OPENSEARCH_PATH_CONF}/certs/bongosec1.indexer.pem
+plugins.security.ssl.http.pemkey_filepath: ${OPENSEARCH_PATH_CONF}/certs/bongosec1.indexer.key
+plugins.security.ssl.http.pemtrustedcas_filepath: ${OPENSEARCH_PATH_CONF}/certs/root-ca.pem
+plugins.security.ssl.transport.pemcert_filepath: ${OPENSEARCH_PATH_CONF}/certs/bongosec1.indexer.pem
+plugins.security.ssl.transport.pemkey_filepath: ${OPENSEARCH_PATH_CONF}/certs/bongosec1.indexer.key
+plugins.security.ssl.transport.pemtrustedcas_filepath: ${OPENSEARCH_PATH_CONF}/certs/root-ca.pem
+plugins.security.ssl.http.enabled: true
+plugins.security.ssl.transport.enforce_hostname_verification: false
+plugins.security.ssl.transport.resolve_hostname: false
+plugins.security.authcz.admin_dn:
+- "CN=admin,OU=Bongosec,O=Bongosec,L=California,C=US"
+plugins.security.check_snapshot_restore_write_privileges: true
+plugins.security.enable_snapshot_restore_privilege: true
+plugins.security.nodes_dn:
+- "CN=bongosec1.indexer,OU=Bongosec,O=Bongosec,L=California,C=US"
+- "CN=bongosec2.indexer,OU=Bongosec,O=Bongosec,L=California,C=US"
+- "CN=bongosec3.indexer,OU=Bongosec,O=Bongosec,L=California,C=US"
+- "CN=filebeat,OU=Bongosec,O=Bongosec,L=California,C=US"
+plugins.security.restapi.roles_enabled:
+- "all_access"
+- "security_rest_api_access"
+plugins.security.allow_default_init_securityindex: true
+cluster.routing.allocation.disk.threshold_enabled: false
+compatibility.override_main_response_version: true

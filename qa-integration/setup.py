@@ -75,7 +75,7 @@ setup(
     description='Bongosec testing utilities to help programmers automate tests',
     url='https://github.com/bongosec',
     author='Bongosec',
-    author_email='hello@bongosec.com',
+    author_email='hello@bongosec.github.io',
     license='GPLv2',
     packages=find_packages(where='src'),
     package_dir={'bongosec_testing': 'src/bongosec_testing'},

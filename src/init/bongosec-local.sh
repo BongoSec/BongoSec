@@ -25,7 +25,7 @@ if [ $? = 0 ]; then
 . ${PLIST};
 fi
 
-AUTHOR="Bongosec Inc."
+AUTHOR="Bongosec."
 DAEMONS="bongosec-modulesd bongosec-monitord bongosec-logcollector bongosec-syscheckd bongosec-analysisd bongosec-maild bongosec-execd bongosec-db bongosec-agentlessd bongosec-integratord bongosec-dbd bongosec-csyslogd"
 
 # Reverse order of daemons

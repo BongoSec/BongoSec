@@ -1,6 +1,6 @@
 /*
  * Bongosec Syscheck
- * Copyright (C) 2021, Bongosec Inc.
+ * Copyright (C) 2021, Bongosec.
  * September 23, 2021.
  *
  * This program is free software; you can redistribute it

@@ -29,7 +29,7 @@ def test_print_version(print_mock):
     with patch('bongosec.core.cluster.__version__', 'TEST'):
         bongosec_clusterd.print_version()
         print_mock.assert_called_once_with(
-            '\nBongosec TEST - Bongosec Inc\n\nThis program is free software; you can redistribute it and/or modify\n'
+            '\nBongosec TEST - Bongosec\n\nThis program is free software; you can redistribute it and/or modify\n'
             'it under the terms of the GNU General Public License (version 2) as \npublished by the '
             'Free Software Foundation. For more details, go to \nhttps://www.gnu.org/licenses/gpl.html\n')
 

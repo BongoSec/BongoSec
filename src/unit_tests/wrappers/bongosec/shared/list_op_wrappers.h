@@ -1,4 +1,4 @@
-/* Copyright (C) 2023, Bongosec Inc.
+/* Copyright (C) 2023, Bongosec.
  * All rights reserved.
  *
  * This program is free software; you can redistribute it

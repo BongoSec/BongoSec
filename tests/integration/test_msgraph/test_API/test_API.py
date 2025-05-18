@@ -1,5 +1,5 @@
 '''
-copyright: Copyright (C) 2015-2024, Bongosec Inc.
+copyright: Copyright (C) 2015-2024, Bongosec.
 
            Created by BongoSec <info@khulnasoft.com>.
 

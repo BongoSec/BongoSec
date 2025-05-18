@@ -25,7 +25,7 @@ if [ $? = 0 ]; then
 . ${PLIST};
 fi
 
-AUTHOR="Bongosec Inc."
+AUTHOR="Bongosec."
 USE_JSON=false
 DAEMONS="bongosec-clusterd bongosec-modulesd bongosec-monitord bongosec-logcollector bongosec-remoted bongosec-syscheckd bongosec-analysisd bongosec-maild bongosec-execd bongosec-db bongosec-authd bongosec-agentlessd bongosec-integratord bongosec-dbd bongosec-csyslogd bongosec-apid"
 OP_DAEMONS="bongosec-clusterd bongosec-maild bongosec-agentlessd bongosec-integratord bongosec-dbd bongosec-csyslogd"

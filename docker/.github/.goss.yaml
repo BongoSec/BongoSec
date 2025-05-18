@@ -1,0 +1,103 @@
+file:
+  /etc/filebeat/filebeat.yml:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /var/ossec/bin/bongosec-control:
+    exists: true
+    mode: "0750"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /var/ossec/etc/lists/audit-keys:
+    exists: true
+    mode: "0660"
+    owner: bongosec
+    group: bongosec
+    filetype: file
+    contains: []
+  /var/ossec/etc/ossec.conf:
+    exists: true
+    mode: "0660"
+    owner: root
+    group: bongosec
+    filetype: file
+    contains: []
+  /var/ossec/etc/rules/local_rules.xml:
+    exists: true
+    mode: "0660"
+    owner: bongosec
+    group: bongosec
+    filetype: file
+    contains: []
+  /var/ossec/etc/sslmanager.cert:
+    exists: true
+    mode: "0640"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /var/ossec/etc/sslmanager.key:
+    exists: true
+    mode: "0640"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+package:
+  filebeat:
+    installed: true
+    versions:
+    - 7.10.2
+  bongosec-manager:
+    installed: true
+    versions:
+    - 5.0.0
+port:
+  tcp:1514:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp:1515:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp:55000:
+    listening: true
+    ip:
+    - 0.0.0.0
+process:
+  filebeat:
+    running: true
+  bongosec-analysisd:
+    running: true
+  bongosec-authd:
+    running: true
+  bongosec-execd:
+    running: true
+  bongosec-monitord:
+    running: true
+  bongosec-remoted:
+    running: true
+  bongosec-syscheckd:
+    running: true
+  s6-supervise:
+    running: true
+  bongosec-db:
+    running: true
+  bongosec-modulesd:
+    running: true
+user:
+  bongosec:
+    exists: true
+    groups:
+    - bongosec
+    home: /var/ossec
+    shell: /sbin/nologin
+group:
+  bongosec:
+    exists: true

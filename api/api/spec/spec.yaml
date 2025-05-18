@@ -14243,7 +14243,7 @@ paths:
                   -  Rules config
                   -  Author: Daniel Cid.
                   -  Updated by Bongosec, Inc.
-                  -  Copyright (C) 2015, Bongosec Inc.
+                  -  Copyright (C) 2015, Bongosec.
                   -  Copyright (C) 2009 Trend Micro Inc.
                   -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
                 -->
@@ -15027,7 +15027,7 @@ paths:
                 <!--
                   -  Bongosec decoders
                   -  Created by BongoSec
-                  -  Copyright (C) 2015, Bongosec Inc.
+                  -  Copyright (C) 2015, Bongosec.
                   -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
                 -->
                 <decoder name="bongosec">

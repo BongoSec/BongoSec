@@ -1,6 +1,6 @@
 /*
  * SQL Schema for upgrading databases
- * Copyright (C) 2015-2022, Bongosec Inc.
+ * Copyright (C) 2015-2022, Bongosec.
  *
  * December, 2022.
  *

@@ -327,7 +327,7 @@ def compare_config_api_response(configuration, section):
 def get_manager_configuration(section=None, field=None):
     """Get Bongosec manager configuration response from API using GET /manager/configuration
 
-    References: https://documentation.bongosec.com/current/user-manual/api/reference.html#operation/
+    References: https://documentation.bongosec.github.io/current/user-manual/api/reference.html#operation/
                 api.controllers.manager_controller.get_configuration
 
     Args:

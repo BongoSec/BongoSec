@@ -1,4 +1,4 @@
-/* Copyright (C) 2015 Bongosec Inc.
+/* Copyright (C) 2015 Bongosec.
  * All right reserved.
  *
  * This program is free software; you can redistribute it

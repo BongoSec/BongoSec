@@ -1,4 +1,4 @@
-# Copyright (C) 2015, Bongosec Inc.
+# Copyright (C) 2015, Bongosec.
 # Created by Bongosec <info@khulnasoft.com>.
 # This program is free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -599,15 +599,15 @@ class MacieDataGenerator(DataGenerator):
                     'alert-arn': f"arn:aws:macie:us-east-1:{RANDOM_ACCOUNT_ID}:trigger/{str(uuid4())}/alert",
                     'risk-score': 9,
                     'created-at': '2021-01-01T00:20:42.364509',
-                    'actor': 'resources.bongosec.com',
+                    'actor': 'resources.bongosec.github.io',
                     'summary': {
                         'Description': 'S3 Bucket uses IAM policy to grant read rights to Everyone.',
                         'Bucket': {
-                            'resources.bongosec.com': 1
+                            'resources.bongosec.github.io': 1
                         },
                         'Record Count': 1,
                         'ACL': {
-                            'resources.bongosec.com': [
+                            'resources.bongosec.github.io': [
                                 {
                                     'Owner': {
                                         'DisplayName': 'bongosec',
