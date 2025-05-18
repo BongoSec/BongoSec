@@ -871,7 +871,7 @@ exports[`dashboard listing hideWriteControls 1`] = `
                   },
                 },
                 "bongosec": Object {
-                  "index": "https://documentation.bongosec.com/4.x/index.html",
+                  "index": "https://documentation.bongosec.github.io/4.x/index.html",
                 },
               },
             },
@@ -2074,7 +2074,7 @@ exports[`dashboard listing render table listing with initial filters from URL 1`
                   },
                 },
                 "bongosec": Object {
-                  "index": "https://documentation.bongosec.com/4.x/index.html",
+                  "index": "https://documentation.bongosec.github.io/4.x/index.html",
                 },
               },
             },
@@ -3343,7 +3343,7 @@ exports[`dashboard listing renders call to action when no dashboards exist 1`] =
                   },
                 },
                 "bongosec": Object {
-                  "index": "https://documentation.bongosec.com/4.x/index.html",
+                  "index": "https://documentation.bongosec.github.io/4.x/index.html",
                 },
               },
             },
@@ -4612,7 +4612,7 @@ exports[`dashboard listing renders table rows 1`] = `
                   },
                 },
                 "bongosec": Object {
-                  "index": "https://documentation.bongosec.com/4.x/index.html",
+                  "index": "https://documentation.bongosec.github.io/4.x/index.html",
                 },
               },
             },
@@ -5881,7 +5881,7 @@ exports[`dashboard listing renders warning when listingLimit is exceeded 1`] = `
                   },
                 },
                 "bongosec": Object {
-                  "index": "https://documentation.bongosec.com/4.x/index.html",
+                  "index": "https://documentation.bongosec.github.io/4.x/index.html",
                 },
               },
             },

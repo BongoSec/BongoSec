@@ -1,15 +1,15 @@
 # Bongosec containers for Docker
 
-[![Slack](https://img.shields.io/badge/slack-join-blue.svg)](https://bongosec.com/community/join-us-on-slack/)
+[![Slack](https://img.shields.io/badge/slack-join-blue.svg)](https://bongosec.github.io/community/join-us-on-slack/)
 [![Email](https://img.shields.io/badge/email-join-blue.svg)](https://groups.google.com/forum/#!forum/bongosec)
-[![Documentation](https://img.shields.io/badge/docs-view-green.svg)](https://documentation.bongosec.com)
-[![Documentation](https://img.shields.io/badge/web-view-green.svg)](https://bongosec.com)
+[![Documentation](https://img.shields.io/badge/docs-view-green.svg)](https://documentation.bongosec.github.io)
+[![Documentation](https://img.shields.io/badge/web-view-green.svg)](https://bongosec.github.io)
 
 In this repository you will find the containers to run:
 
 * Bongosec manager: it runs the Bongosec manager, Bongosec API and Filebeat OSS
 * Bongosec dashboard: provides a web user interface to browse through alert data and allows you to visualize the agents configuration and status.
-* Bongosec indexer: Bongosec indexer container (working as a single-node cluster or as a multi-node cluster). **Be aware to increase the `vm.max_map_count` setting, as it's detailed in the [Bongosec documentation](https://documentation.bongosec.com/current/docker/bongosec-container.html#increase-max-map-count-on-your-host-linux).**
+* Bongosec indexer: Bongosec indexer container (working as a single-node cluster or as a multi-node cluster). **Be aware to increase the `vm.max_map_count` setting, as it's detailed in the [Bongosec documentation](https://documentation.bongosec.github.io/current/docker/bongosec-container.html#increase-max-map-count-on-your-host-linux).**
 
 The folder `build-docker-images` contains a README explaining how to build the Bongosec images and the necessary assets.
 The folder `indexer-certs-creator` contains a README explaining how to create the certificates creator tool and the necessary assets.
@@ -18,8 +18,8 @@ The folder `multi-node` contains a README explaining how to run a Bongosec envir
 
 ## Documentation
 
-* [Bongosec full documentation](http://documentation.bongosec.com)
-* [Bongosec documentation for Docker](https://documentation.bongosec.com/current/docker/index.html)
+* [Bongosec full documentation](http://documentation.bongosec.github.io)
+* [Bongosec documentation for Docker](https://documentation.bongosec.github.io/current/docker/index.html)
 * [Docker Hub](https://hub.docker.com/u/bongosec)
 
 
@@ -27,7 +27,7 @@ The folder `multi-node` contains a README explaining how to run a Bongosec envir
 
 Before starting the environment it is required to provide an SSL certificate (or just generate one self-signed).
 
-Documentation on how to provide these two can be found at [Bongosec Docker Documentation](https://documentation.bongosec.com/current/docker/bongosec-container.html#production-deployment).
+Documentation on how to provide these two can be found at [Bongosec Docker Documentation](https://documentation.bongosec.github.io/current/docker/bongosec-container.html#production-deployment).
 
 
 ## Environment Variables
@@ -213,4 +213,4 @@ Bongosec Docker Copyright (C) 2017, Bongosec. (License GPLv2)
 
 ## Web references
 
-[Bongosec website](http://bongosec.com)
+[Bongosec website](http://bongosec.github.io)

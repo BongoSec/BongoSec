@@ -424,7 +424,7 @@ exports[`AdvancedSettings should render normally when use updated UX 1`] = `
         },
       },
       "bongosec": Object {
-        "index": "https://documentation.bongosec.com/4.x/index.html",
+        "index": "https://documentation.bongosec.github.io/4.x/index.html",
       },
     }
   }
@@ -1080,7 +1080,7 @@ exports[`AdvancedSettings should render normally when use updated UX 1`] = `
             },
           },
           "bongosec": Object {
-            "index": "https://documentation.bongosec.com/4.x/index.html",
+            "index": "https://documentation.bongosec.github.io/4.x/index.html",
           },
         }
       }
@@ -2001,7 +2001,7 @@ exports[`AdvancedSettings should render normally when use updated UX 1`] = `
                         },
                       },
                       "bongosec": Object {
-                        "index": "https://documentation.bongosec.com/4.x/index.html",
+                        "index": "https://documentation.bongosec.github.io/4.x/index.html",
                       },
                     }
                   }
@@ -2419,7 +2419,7 @@ exports[`AdvancedSettings should render normally when use updated UX 1`] = `
                         },
                       },
                       "bongosec": Object {
-                        "index": "https://documentation.bongosec.com/4.x/index.html",
+                        "index": "https://documentation.bongosec.github.io/4.x/index.html",
                       },
                     }
                   }
@@ -2837,7 +2837,7 @@ exports[`AdvancedSettings should render normally when use updated UX 1`] = `
                         },
                       },
                       "bongosec": Object {
-                        "index": "https://documentation.bongosec.com/4.x/index.html",
+                        "index": "https://documentation.bongosec.github.io/4.x/index.html",
                       },
                     }
                   }
@@ -3255,7 +3255,7 @@ exports[`AdvancedSettings should render normally when use updated UX 1`] = `
                         },
                       },
                       "bongosec": Object {
-                        "index": "https://documentation.bongosec.com/4.x/index.html",
+                        "index": "https://documentation.bongosec.github.io/4.x/index.html",
                       },
                     }
                   }
@@ -3728,7 +3728,7 @@ exports[`AdvancedSettings should render normally when use updated UX 1`] = `
                         },
                       },
                       "bongosec": Object {
-                        "index": "https://documentation.bongosec.com/4.x/index.html",
+                        "index": "https://documentation.bongosec.github.io/4.x/index.html",
                       },
                     }
                   }
@@ -4148,7 +4148,7 @@ exports[`AdvancedSettings should render normally when use updated UX 1`] = `
                         },
                       },
                       "bongosec": Object {
-                        "index": "https://documentation.bongosec.com/4.x/index.html",
+                        "index": "https://documentation.bongosec.github.io/4.x/index.html",
                       },
                     }
                   }

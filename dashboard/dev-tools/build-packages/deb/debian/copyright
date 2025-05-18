@@ -1,10 +1,10 @@
 This work was packaged for Debian by:
 
-    Bongosec, Inc <info@bongosec.com> on Sat, 04 Dec 2021 14:04:26 +0000
+    Bongosec, Inc <info@bongosec.github.io> on Sat, 04 Dec 2021 14:04:26 +0000
 
 It was downloaded from:
 
-    https://www.bongosec.com
+    https://www.bongosec.github.io
 
 Copyright:
 
@@ -16,7 +16,7 @@ License:
 
 The Debian packaging is:
 
-    Copyright (C) 2021 Bongosec, Inc <info@bongosec.com>
+    Copyright (C) 2021 Bongosec, Inc <info@bongosec.github.io>
 
 and is licensed under the GPL version 2,
 see "/usr/share/common-licenses/GPL-2".

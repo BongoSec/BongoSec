@@ -1812,7 +1812,7 @@ exports[`Header help menu hides survey link 1`] = `
                       >
                         <a
                           class="euiButtonEmpty euiButtonEmpty--primary euiButtonEmpty--xSmall euiButtonEmpty--flushLeft"
-                          href="https://documentation.bongosec.com/4.13/"
+                          href="https://documentation.bongosec.github.io/4.13/"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -1836,7 +1836,7 @@ exports[`Header help menu hides survey link 1`] = `
                         />
                         <a
                           class="euiButtonEmpty euiButtonEmpty--primary euiButtonEmpty--xSmall euiButtonEmpty--flushLeft"
-                          href="https://bongosec.com/community/join-us-on-slack/"
+                          href="https://bongosec.github.io/community/join-us-on-slack/"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -2028,14 +2028,14 @@ exports[`Header help menu hides survey link 1`] = `
                         >
                           <EuiButtonEmpty
                             flush="left"
-                            href="https://documentation.bongosec.com/4.13/"
+                            href="https://documentation.bongosec.github.io/4.13/"
                             iconType="/ui/logos/icon_light.svg"
                             size="xs"
                             target="_blank"
                           >
                             <a
                               className="euiButtonEmpty euiButtonEmpty--primary euiButtonEmpty--xSmall euiButtonEmpty--flushLeft"
-                              href="https://documentation.bongosec.com/4.13/"
+                              href="https://documentation.bongosec.github.io/4.13/"
                               rel="noopener noreferrer"
                               target="_blank"
                             >
@@ -2091,14 +2091,14 @@ exports[`Header help menu hides survey link 1`] = `
                           </EuiSpacer>
                           <EuiButtonEmpty
                             flush="left"
-                            href="https://bongosec.com/community/join-us-on-slack/"
+                            href="https://bongosec.github.io/community/join-us-on-slack/"
                             iconType="logoSlack"
                             size="xs"
                             target="_blank"
                           >
                             <a
                               className="euiButtonEmpty euiButtonEmpty--primary euiButtonEmpty--xSmall euiButtonEmpty--flushLeft"
-                              href="https://bongosec.com/community/join-us-on-slack/"
+                              href="https://bongosec.github.io/community/join-us-on-slack/"
                               rel="noopener noreferrer"
                               target="_blank"
                             >
@@ -4042,7 +4042,7 @@ exports[`Header help menu renders survey link 1`] = `
                       >
                         <a
                           class="euiButtonEmpty euiButtonEmpty--primary euiButtonEmpty--xSmall euiButtonEmpty--flushLeft"
-                          href="https://documentation.bongosec.com/4.13/"
+                          href="https://documentation.bongosec.github.io/4.13/"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -4066,7 +4066,7 @@ exports[`Header help menu renders survey link 1`] = `
                         />
                         <a
                           class="euiButtonEmpty euiButtonEmpty--primary euiButtonEmpty--xSmall euiButtonEmpty--flushLeft"
-                          href="https://bongosec.com/community/join-us-on-slack/"
+                          href="https://bongosec.github.io/community/join-us-on-slack/"
                           rel="noopener noreferrer"
                           target="_blank"
                         >
@@ -4283,14 +4283,14 @@ exports[`Header help menu renders survey link 1`] = `
                         >
                           <EuiButtonEmpty
                             flush="left"
-                            href="https://documentation.bongosec.com/4.13/"
+                            href="https://documentation.bongosec.github.io/4.13/"
                             iconType="/ui/logos/icon_light.svg"
                             size="xs"
                             target="_blank"
                           >
                             <a
                               className="euiButtonEmpty euiButtonEmpty--primary euiButtonEmpty--xSmall euiButtonEmpty--flushLeft"
-                              href="https://documentation.bongosec.com/4.13/"
+                              href="https://documentation.bongosec.github.io/4.13/"
                               rel="noopener noreferrer"
                               target="_blank"
                             >
@@ -4346,14 +4346,14 @@ exports[`Header help menu renders survey link 1`] = `
                           </EuiSpacer>
                           <EuiButtonEmpty
                             flush="left"
-                            href="https://bongosec.com/community/join-us-on-slack/"
+                            href="https://bongosec.github.io/community/join-us-on-slack/"
                             iconType="logoSlack"
                             size="xs"
                             target="_blank"
                           >
                             <a
                               className="euiButtonEmpty euiButtonEmpty--primary euiButtonEmpty--xSmall euiButtonEmpty--flushLeft"
-                              href="https://bongosec.com/community/join-us-on-slack/"
+                              href="https://bongosec.github.io/community/join-us-on-slack/"
                               rel="noopener noreferrer"
                               target="_blank"
                             >

@@ -1,5 +1,5 @@
 <div style="text-align:center">
-    <img src="https://bongosec.com/uploads/2022/05/Logo-blogpost.png"/>
+    <img src="https://bongosec.github.io/uploads/2022/05/Logo-blogpost.png"/>
 </div>
 
 - [Welcome!](#welcome)
@@ -18,7 +18,7 @@ Bongosec is a security detection, visibility, and compliance open-source project
 helps you to gain deeper security visibility into your infrastructure by monitoring
 hosts at an operating system and application level.
 
-You can learn more about it at [bongosec.com][bongosec-web].
+You can learn more about it at [bongosec.github.io][bongosec-web].
 
 ## Project Resources
 
@@ -50,6 +50,6 @@ This project is licensed under the [Apache v2.0 License](LICENSE.txt).
 
 [opensearch-dashboards]: https://github.com/opensearch-project/OpenSearch-Dashboards
 [bongosec-plugin]: https://github.com/bongosec/bongosec-kibana-app
-[bongosec-web]: https://bongosec.com
-[bongosec-docs]: https://documentation.bongosec.com
+[bongosec-web]: https://bongosec.github.io
+[bongosec-docs]: https://documentation.bongosec.github.io
 [slack-invite]: https://join.slack.com/t/bongosec/shared_invite/zt-1lgu531ur-7M_k_ZQbpdo4QCn_pHee3w

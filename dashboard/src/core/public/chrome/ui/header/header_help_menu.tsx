@@ -226,7 +226,7 @@ class HeaderHelpMenuUI extends Component<Props, State> {
         <EuiSpacer size="xs" />
 
         <EuiButtonEmpty
-          href="https://bongosec.com/community/join-us-on-slack/"
+          href="https://bongosec.github.io/community/join-us-on-slack/"
           target="_blank"
           size="xs"
           flush="left"

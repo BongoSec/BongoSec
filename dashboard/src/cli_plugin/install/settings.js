@@ -36,7 +36,7 @@ import { fromRoot } from '../../core/server/utils';
 
 const LATEST_PLUGIN_BASE_URL =
   'https://ci.opensearch.org/ci/dbc/distribution-build-opensearch-dashboards';
-const LATEST_BONGOSEC_PLUGIN_BASE_URL = 'https://packages-dev.bongosec.com/pre-release/ui/dashboard';
+const LATEST_BONGOSEC_PLUGIN_BASE_URL = 'https://packages-dev.bongosec.github.io/pre-release/ui/dashboard';
 
 function generateUrls({ version, plugin, bongosecVersion }) {
   return plugin.includes('bongosec')

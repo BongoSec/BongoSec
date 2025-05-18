@@ -32,7 +32,7 @@ import bongosec from '../../../../package.json';
 export const BONGOSEC_MAJOR = bongosec.bongosec.version.split('.')[0];
 export const BONGOSEC_MINOR = bongosec.bongosec.version.split('.')[1];
 
-export const OPENSEARCH_DASHBOARDS_FEEDBACK_LINK = 'https://bongosec.com/community/join-us-on-slack';
+export const OPENSEARCH_DASHBOARDS_FEEDBACK_LINK = 'https://bongosec.github.io/community/join-us-on-slack';
 export const OPENSEARCH_DASHBOARDS_ASK_OPENSEARCH_LINK = OPENSEARCH_DASHBOARDS_FEEDBACK_LINK;
 export const GITHUB_CREATE_ISSUE_LINK = 'https://github.com/bongosec/bongosec/issues/new/choose';
 
@@ -55,4 +55,4 @@ export enum HeaderVariant {
   PAGE = 'page',
   APPLICATION = 'application',
 }
-export const BONGOSEC_DOCUMENTATION_URL = `https://documentation.bongosec.com/${BONGOSEC_MAJOR}.${BONGOSEC_MINOR}/`;
+export const BONGOSEC_DOCUMENTATION_URL = `https://documentation.bongosec.github.io/${BONGOSEC_MAJOR}.${BONGOSEC_MINOR}/`;

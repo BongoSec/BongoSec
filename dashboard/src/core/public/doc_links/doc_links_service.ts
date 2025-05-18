@@ -63,7 +63,7 @@ export class DocLinksService {
     const OPENSEARCH_VERSIONED_DOCS = `${OPENSEARCH_WEBSITE_DOCS}/opensearch/`;
     const OPENSEARCH_DASHBOARDS_VERSIONED_DOCS = `${OPENSEARCH_WEBSITE_DOCS}/dashboards/`;
     const BONGOSEC_DOC_VERSION = injectedMetadata.getBongosecDocVersion();
-    const BONGOSEC_WEBSITE_DOCS = `https://documentation.bongosec.com/${BONGOSEC_DOC_VERSION}`;
+    const BONGOSEC_WEBSITE_DOCS = `https://documentation.bongosec.github.io/${BONGOSEC_DOC_VERSION}`;
 
     return deepFreeze({
       DOC_LINK_VERSION,
