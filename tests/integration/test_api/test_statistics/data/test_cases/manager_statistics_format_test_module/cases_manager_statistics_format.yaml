@@ -1,0 +1,20 @@
+- name: REMOTED_ENDPOINT
+  description: remoted statistics endpoint
+  configuration_parameters:
+    ENDPOINT: bongosec-remoted
+  metadata:
+    endpoint: bongosec-remoted
+
+- name: ANALYSISD_ENDPOINT
+  description: analysisd statistics endpoint
+  configuration_parameters:
+    ENDPOINT: bongosec-analysisd
+  metadata:
+    endpoint: bongosec-analysisd
+
+- name: BONGOSEC_DB_ENDPOINT
+  description: bongosec-db statistics endpoint
+  configuration_parameters:
+    ENDPOINT: bongosec-db
+  metadata:
+    endpoint: bongosec-db

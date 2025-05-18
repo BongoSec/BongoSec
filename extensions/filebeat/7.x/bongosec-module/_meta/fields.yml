@@ -1,0 +1,9 @@
+- key: bongosec
+  title: "bongosec"
+  description: >
+    bongosec Module
+  fields:
+    - name: bongosec
+      type: group
+      description: >
+      fields:

@@ -1,0 +1,5 @@
+audit-bongosec-w:write
+audit-bongosec-r:read
+audit-bongosec-a:attribute
+audit-bongosec-x:execute
+audit-bongosec-c:command

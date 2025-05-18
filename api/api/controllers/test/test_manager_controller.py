@@ -11,8 +11,8 @@ from api.constants import INSTALLATION_UID_KEY, UPDATE_INFORMATION_KEY
 from api.controllers.test.utils import CustomAffectedItems
 
 
-with patch('bongosec.common.bongosec_uid'):
-    with patch('bongosec.common.bongosec_gid'):
+with patch('bongosec.github.iomon.bongosec_uid'):
+    with patch('bongosec.github.iomon.bongosec_gid'):
         sys.modules['bongosec.rbac.orm'] = MagicMock()
         import bongosec.rbac.decorators
         import bongosec.stats as stats

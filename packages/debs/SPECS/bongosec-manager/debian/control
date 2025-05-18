@@ -1,0 +1,28 @@
+Source: bongosec-manager
+Section: admin
+Priority: extra
+Maintainer: Bongosec, Inc <info@bongosec.github.io>
+Build-Depends: debhelper (>= 7.0.50~), libssl-dev, linux-libc-dev, gawk, libaudit-dev, selinux-basics
+Standards-Version: 3.8.4
+Homepage: http://www.bongosec.github.io
+
+Package: bongosec-manager
+Architecture: any
+Depends: ${shlibs:Depends}, libc6 (>= 2.7), lsb-release, debconf, adduser
+Suggests: expect
+Conflicts: ossec-hids-agent, bongosec-agent, ossec-hids, bongosec-api
+Replaces: bongosec-api
+Description: Bongosec manager
+ Bongosec helps you to gain security visibility into your infrastructure by monitoring
+ hosts at an operating system and application level. It provides the following
+ capabilities: log analysis, file integrity monitoring, intrusions detection
+ and policy and compliance monitoring.
+
+Package: bongosec-manager-dbg
+Section: debug
+Priority: optional
+Architecture: any
+Conflicts: bongosec-manager (<< ${binary:Version}), bongosec-manager (>> ${binary:Version})
+Depends: bongosec-manager
+Description: Debug symbols for bongosec-manager.
+  This package contains files necessary for debugging the bongosec-manager with gdb.

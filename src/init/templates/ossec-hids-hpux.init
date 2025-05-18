@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# name: bongosec
+# purpose: Init script for Bongosec
+# Copyright (C) 2025, BongoSec <support@bongosec.github.io>
+#
+
+BONGOSEC_HOME=BONGOSEC_HOME_TMP
+BONGOSEC_CONTROL="$BONGOSEC_HOME/bin/bongosec-control"
+
+case "$1" in
+start)
+    if [ -f "$BONGOSEC_CONTROL" ]; then
+        echo "Starting Bongosec"
+        ${BONGOSEC_CONTROL} start
+    fi
+    ;;
+stop)
+    if [ -f "$BONGOSEC_CONTROL" ]; then
+        echo "Stopping Bongosec"
+        ${BONGOSEC_CONTROL} stop
+    fi
+    ;;
+status)
+    if [ -f "$BONGOSEC_CONTROL" ]; then
+        ${BONGOSEC_CONTROL} status
+    fi
+    ;;
+restart)
+    if [ -f "$BONGOSEC_CONTROL" ]; then
+        ${BONGOSEC_CONTROL} restart
+    fi
+    ;;
+*)
+    echo "Usage: $0 (start | stop | restart | status)"
+    exit 1
+esac

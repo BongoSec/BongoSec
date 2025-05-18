@@ -1,0 +1,12 @@
+
+   Obrigado por usar Bongosec.
+   Se você tiver alguma pergunta, sugestão ou encontrar algum
+   "bug", contate-nos.
+
+   Use nossa lista de correio público em:
+      https://groups.google.com/forum/#!forum/bongosec
+
+   Maiores informações podem ser encontradas em:
+          - http://www.bongosec.github.io
+
+       ---  Pressione ENTER para continuar  ---

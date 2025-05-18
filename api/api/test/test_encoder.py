@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 import pytest
 
-with patch('bongosec.common.bongosec_uid'):
-    with patch('bongosec.common.bongosec_gid'):
+with patch('bongosec.github.iomon.bongosec_uid'):
+    with patch('bongosec.github.iomon.bongosec_gid'):
         from api.encoder import prettify, dumps
         from bongosec.core.results import BongosecResult
 

@@ -1,0 +1,72 @@
+#!/bin/sh
+
+# Copyright (C) 2025, BongoSec
+# OSSEC         Controls Bongosec on Redhat-based systems
+# Author:       Kayvan A. Sylvan <kayvan@sylvan.com>
+# Author:       Daniel B. Cid <dcid@ossec.net>
+#
+# chkconfig: 2345 99 15
+# description: Starts and stops Bongosec (Host Intrusion Detection System)
+#
+# This will work on Redhat systems (maybe others too)
+
+# Source function library.
+export LANG=C
+
+. /etc/init.d/functions
+
+BONGOSEC_HOME=BONGOSEC_HOME_TMP
+BONGOSEC_CONTROL="$BONGOSEC_HOME/bin/bongosec-control"
+
+start() {
+    echo -n "Starting Bongosec: "
+    ${BONGOSEC_CONTROL} start > /dev/null
+    RETVAL=$?
+    if [ $RETVAL -eq 0 ]; then
+        success
+    else
+        failure
+    fi
+    echo
+    return $RETVAL
+}
+
+stop() {
+    echo -n "Stopping Bongosec: "
+    ${BONGOSEC_CONTROL} stop > /dev/null
+    RETVAL=$?
+    if [ $RETVAL -eq 0 ]; then
+        success
+    else
+        failure
+    fi
+    echo
+    return $RETVAL
+}
+
+status() {
+    ${BONGOSEC_CONTROL} status
+    RETVAL=$?
+    return $RETVAL
+}
+
+case "$1" in
+start)
+    start
+    ;;
+stop)
+    stop
+    ;;
+restart)
+    stop
+    start
+    ;;
+status)
+    status
+    ;;
+*)
+    echo "*** Usage: ossec {start|stop|restart|status}"
+    exit 1
+esac
+
+exit $?

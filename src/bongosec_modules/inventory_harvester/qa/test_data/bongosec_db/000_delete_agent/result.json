@@ -1,0 +1,34 @@
+[
+    {
+        "index_name": "bongosec-states-packages-cluster01",
+        "data": []
+    },
+    {
+        "index_name": "bongosec-states-system-cluster01",
+        "data": []
+    },
+    {
+        "index_name": "bongosec-states-registries-cluster01",
+        "data": []
+    },
+    {
+        "index_name": "bongosec-states-files-cluster01",
+        "data": []
+    },
+    {
+        "index_name": "bongosec-states-ports-cluster01",
+        "data": []
+    },
+    {
+        "index_name": "bongosec-states-hotfixes-cluster01",
+        "data": []
+    },
+    {
+        "index_name": "bongosec-states-processes-cluster01",
+        "data": []
+    },
+    {
+        "index_name": "bongosec-states-interfaces-cluster01",
+        "data": []
+    }
+]

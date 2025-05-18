@@ -1,0 +1,38 @@
+#!/bin/ksh
+#
+# name: ossec
+# purpose: Init script for ossec-hids
+# Copyright (C) 2025, BongoSec
+# Aug. 07 2008 Chris Cuevas
+#
+
+BONGOSEC_HOME=BONGOSEC_HOME_TMP
+BONGOSEC_CONTROL="$BONGOSEC_HOME/bin/bongosec-control"
+
+case "$1" in
+start)
+    if [ -f "$BONGOSEC_CONTROL" ]; then
+        echo "Starting Bongosec"
+        ${BONGOSEC_CONTROL} start
+    fi
+    ;;
+stop)
+    if [ -f "$BONGOSEC_CONTROL" ]; then
+        echo "Stopping Bongosec"
+        ${BONGOSEC_CONTROL} stop
+    fi
+    ;;
+status)
+    if [ -f "$BONGOSEC_CONTROL" ]; then
+        ${BONGOSEC_CONTROL} status
+    fi
+    ;;
+restart)
+    if [ -f "$BONGOSEC_CONTROL" ]; then
+        ${BONGOSEC_CONTROL} restart
+    fi
+    ;;
+*)
+    echo "Usage: $0 (start | stop |restart | status)"
+    exit 1
+esac

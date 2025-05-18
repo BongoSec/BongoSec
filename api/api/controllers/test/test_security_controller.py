@@ -12,8 +12,8 @@ from connexion.testing import TestContext
 from api.controllers.util import JSON_CONTENT_TYPE
 from api.controllers.test.utils import CustomAffectedItems
 
-with patch('bongosec.common.bongosec_uid'):
-    with patch('bongosec.common.bongosec_gid'):
+with patch('bongosec.github.iomon.bongosec_uid'):
+    with patch('bongosec.github.iomon.bongosec_gid'):
         sys.modules['bongosec.rbac.orm'] = MagicMock()
         import bongosec.rbac.decorators
         from api.controllers.security_controller import (

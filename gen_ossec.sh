@@ -3,6 +3,9 @@
 # Looking up for the execution directory
 cd `dirname $0`
 
+# Set the base directory
+BASE_DIR="$(pwd)"
+
 Use()
 {
   echo " USE: ./gen_ossec.sh conf install_type distribution version [installation_path]"
@@ -15,8 +18,9 @@ Use()
 # Read script values
 if [ "$1" = "conf" ] && [ "$#" -ge "4" ]; then
 
-  . ./src/init/shared.sh
-  . ./src/init/inst-functions.sh
+  # Source the required files with correct paths
+  . "${BASE_DIR}/src/init/shared.sh"
+  . "${BASE_DIR}/src/init/inst-functions.sh"
 
   INSTYPE=$(echo $2 | tr '[:upper:]' '[:lower:]')
   if [ "$INSTYPE" = "manager" ]; then
@@ -32,11 +36,13 @@ if [ "$1" = "conf" ] && [ "$#" -ge "4" ]; then
   fi
   if [ "$#" = "5" ]; then
     INSTALLDIR="$5"
+  else
+    INSTALLDIR="/var/ossec"
   fi
 
   # Default values definition
   SERVER_IP="MANAGER_IP"
-  NEWCONFIG="./ossec.conf.temp"
+  NEWCONFIG="${BASE_DIR}/ossec.conf.temp"
   SYSCHECK="yes"
   ROOTCHECK="yes"
   SYSCOLLECTOR="yes"
@@ -46,6 +52,11 @@ if [ "$1" = "conf" ] && [ "$#" -ge "4" ]; then
   SSL_CERT="yes"
   RLOG="no" # syslog
   SLOG="yes" # remote
+
+  # Create a temporary directory for the configuration
+  TEMP_DIR="${BASE_DIR}/tmp"
+  mkdir -p "${TEMP_DIR}"
+  NEWCONFIG="${TEMP_DIR}/ossec.conf.temp"
 
   if [ -r "$NEWCONFIG" ]; then
       rm "$NEWCONFIG"
@@ -64,6 +75,7 @@ if [ "$1" = "conf" ] && [ "$#" -ge "4" ]; then
 
   cat "$NEWCONFIG"
   rm "$NEWCONFIG"
+  rmdir "${TEMP_DIR}"
 
   exit 0
 else

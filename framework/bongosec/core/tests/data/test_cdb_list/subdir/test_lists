@@ -1,0 +1,5 @@
+test-bongosec-w:write
+test-bongosec-r:read
+test-bongosec-a:attribute
+test-bongosec-x:execute
+test-bongosec-c:command

@@ -1,0 +1,12 @@
+# BONGOSEC SYSTEM FILE, PLEASE DO NOT MODIFY
+
+default_users:
+  bongosec:
+    description: Superuser of Bongosec.
+    password: bongosec
+    allow_run_as: True
+
+  bongosec-wui:
+    description: Superuser of Bongosec UI
+    password: bongosec-wui
+    allow_run_as: True

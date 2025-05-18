@@ -1,0 +1,50 @@
+<!--
+  -  Bongosec decoders
+  -  Created by Bongosec, Inc.
+  -  Copyright (C) 2025, BongoSec
+  -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
+-->
+<!-- DECODER IN USER_DECODERS_PATH. -->
+
+<decoder name="bongosec">
+  <prematch>^bongosec: </prematch>
+</decoder>
+
+<decoder name="agent-buffer">
+  <parent>bongosec</parent>
+  <prematch offset="after_parent">^Agent buffer:</prematch>
+  <regex offset="after_prematch">^ '(\S+)'.</regex>
+  <order>level</order>
+</decoder>
+
+<decoder name="agent-upgrade">
+  <parent>bongosec</parent>
+  <prematch offset="after_parent">^Upgrade procedure |^Custom installation </prematch>
+  <regex offset="after_prematch">on agent (\d\d\d)\s\((\S+)\):\s(\w+)</regex>
+  <order>agent.id, agent.name, status</order>
+</decoder>
+
+<decoder name="agent-upgrade">
+  <parent>bongosec</parent>
+  <regex>aborted:\s(\.+)$|failed:\s(\.+)$|lost:\s(\.+)$</regex>
+  <order>error</order>
+</decoder>
+
+<decoder name="agent-upgrade">
+  <parent>bongosec</parent>
+  <regex>started.\sCurrent\sversion:\sBongosec\s(\.+)$</regex>
+  <order>agent.cur_version</order>
+</decoder>
+
+<decoder name="agent-upgrade">
+  <parent>bongosec</parent>
+  <regex>succeeded.\sNew\sversion:\sBongosec\s(\.+)$</regex>
+  <order>agent.new_version</order>
+</decoder>
+
+<decoder name="agent-restart" test_tag="test">
+  <parent>bongosec</parent>
+  <prematch offset="after_parent">^Invalid remote configuration:</prematch>
+  <regex offset="after_prematch">^ '(\S+)'.</regex>
+  <order>module</order>
+</decoder>

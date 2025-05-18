@@ -1,0 +1,23 @@
+{
+    "index_patterns": [
+        "bongosec-states-files-*",
+        "bongosec-states-registries-*",
+        "bongosec-states-packages-*",
+        "bongosec-states-system-*",
+        "bongosec-states-processes-*",
+        "bongosec-states-hotfixes-*"
+    ],
+    "priority": 0,
+    "template": {
+        "settings": {
+            "number_of_shards": 1,
+            "number_of_replicas": 0
+        },
+        "mappings": {
+            "dynamic": true,
+            "_source": {
+                "enabled": true
+            }
+        }
+    }
+}

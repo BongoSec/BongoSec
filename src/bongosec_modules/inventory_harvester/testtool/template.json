@@ -1,0 +1,29 @@
+{
+  "index_patterns": [
+    "bongosec-states-files-*",
+    "bongosec-states-registries-*",
+    "bongosec-states-packages-*",
+    "bongosec-states-system-*",
+    "bongosec-states-processes-*",
+    "bongosec-states-ports-*",
+    "bongosec-states-hotfixes-*",
+    "bongosec-states-hardware-*",
+    "bongosec-states-protocols-*",
+    "bongosec-states-interfaces-*",
+    "bongosec-states-hardware-*",
+    "bongosec-states-networks-*"
+  ],
+  "priority": 1,
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0
+    },
+    "mappings": {
+      "dynamic": true,
+      "_source": {
+        "enabled": true
+      }
+    }
+  }
+}

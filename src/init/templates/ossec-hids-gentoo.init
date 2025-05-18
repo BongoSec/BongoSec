@@ -1,0 +1,63 @@
+#!/sbin/runscript
+# Gentoo init script
+# Copyright (C) 2025, BongoSec
+# by gentuxx <gentuxx@gmail.com>
+
+opts="${opts} status configtest"
+
+BONGOSEC_HOME=BONGOSEC_HOME_TMP
+BONGOSEC_CONTROL="$BONGOSEC_HOME/bin/bongosec-control"
+
+depend() {
+    need net
+    use logger
+}
+
+configtest() {
+    ebegin "Checking Bongosec Configuration"
+    checkconfig
+    eend $?
+}
+
+checkconfig() {
+    CONFIGFILE="${CONFIGFILE:-$BONGOSEC_HOME/etc/ossec.conf}"
+    if [ ! -r "${CONFIGFILE}" ]; then
+        eerror "Unable to read configuration file: ${CONFIGFILE}"
+        return 1
+    fi
+
+    # Maybe put some kind of config file syntax checking in here?  XML is a little different
+    # so maybe not.
+    return $ret
+}
+
+start() {
+    checkconfig || return 1
+    ebegin "Starting Bongosec"
+    ${BONGOSEC_CONTROL} start > /dev/null 2>&1
+    eend $?
+}
+
+stop() {
+    checkconfig || return 1
+    ebegin "Stopping Bongosec"
+    ${BONGOSEC_CONTROL} stop > /dev/null 2>&1
+    eend $?
+}
+
+restart() {
+    if ! service_started "${myservice}" ; then
+        eerror "Bongosec is not running! Please start it before trying to reload it."
+    else
+        checkconfig || return 1
+        ebegin "Reloading Bongosec"
+        svc_stop ${BONGOSEC_CONTROL}
+        svc_start ${BONGOSEC_CONTROL}
+        eend $?
+    fi
+}
+
+status() {
+    checkconfig || return 1
+    ${BONGOSEC_CONTROL} status
+}
