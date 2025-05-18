@@ -394,7 +394,7 @@
     "chai": "3.5.0",
     "chance": "1.0.18",
     "cheerio": "1.0.0-rc.1",
-    "chromedriver": "^107.0.3",
+    "chromedriver": "^136.0.2",
     "classnames": "2.3.1",
     "compare-versions": "3.5.1",
     "cypress": "12.17.4",
