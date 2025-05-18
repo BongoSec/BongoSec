@@ -1,0 +1,14 @@
+{
+  "id": "bongosecCheckUpdates",
+  "version": "5.0.0-00",
+  "opensearchDashboardsVersion": "opensearchDashboards",
+  "server": true,
+  "ui": true,
+  "requiredPlugins": [
+    "navigation",
+    "opensearchDashboardsUtils",
+    "opensearchDashboardsReact",
+    "bongosecCore"
+  ],
+  "optionalPlugins": ["securityDashboards"]
+}

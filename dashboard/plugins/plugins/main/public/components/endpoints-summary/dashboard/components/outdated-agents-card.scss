@@ -1,0 +1,22 @@
+.bongosec-outdated-agents-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bongosec-outdated-metric .euiTitle {
+  font-size: 4.5rem;
+  line-height: inherit;
+}
+
+.bongosec-outdated-metric small {
+  font-size: 1.5rem;
+}
+
+.bongosec-outdated-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}

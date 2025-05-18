@@ -1,0 +1,7 @@
+{
+  "prefix": "bongosecCore",
+  "paths": {
+    "bongosecCore": "."
+  },
+  "translations": ["translations/en-US.json"]
+}

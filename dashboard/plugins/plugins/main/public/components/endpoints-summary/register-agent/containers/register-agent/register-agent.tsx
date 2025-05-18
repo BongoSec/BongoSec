@@ -1,0 +1,224 @@
+import React, { useState, useEffect } from 'react';
+import {
+  EuiFlexGroup,
+  EuiFlexItem,
+  EuiPanel,
+  EuiTitle,
+  EuiPage,
+  EuiPageBody,
+  EuiSpacer,
+  EuiProgress,
+} from '@elastic/eui';
+import { WzRequest } from '../../../../../react-services/wz-request';
+import { UI_LOGGER_LEVELS } from '../../../../../../common/constants';
+import { UI_ERROR_SEVERITIES } from '../../../../../react-services/error-orchestrator/types';
+import { ErrorHandler } from '../../../../../react-services/error-management';
+import './register-agent.scss';
+import { Steps } from '../steps/steps';
+import { InputForm } from '../../../../common/form';
+import {
+  getGroups,
+  getMasterConfiguration,
+} from '../../services/register-agent-services';
+import { useForm } from '../../../../common/form/hooks';
+import { FormConfiguration } from '../../../../common/form/types';
+import { useSelector } from 'react-redux';
+import {
+  withErrorBoundary,
+  withGlobalBreadcrumb,
+  withRouteResolvers,
+  withUserAuthorizationPrompt,
+} from '../../../../common/hocs';
+import GroupInput from '../../components/group-input/group-input';
+import { OsCard } from '../../components/os-selector/os-card/os-card';
+import { validateAgentName } from '../../utils/validations';
+import { compose } from 'redux';
+import { endpointSummary } from '../../../../../utils/applications';
+import { getBongosecCorePlugin } from '../../../../../kibana-services';
+import { getErrorOrchestrator } from '../../../../../react-services/common-services';
+import {
+  enableMenu,
+  ip,
+  nestedResolve,
+  savedSearch,
+} from '../../../../../services/resolves';
+
+export const RegisterAgent = compose(
+  withErrorBoundary,
+  withRouteResolvers({ enableMenu, ip, nestedResolve, savedSearch }),
+  withGlobalBreadcrumb([
+    {
+      text: endpointSummary.breadcrumbLabel,
+      href: `#${endpointSummary.redirectTo()}`,
+    },
+    { text: 'Deploy new agent' },
+  ]),
+  withUserAuthorizationPrompt([
+    [{ action: 'agent:create', resource: '*:*:*' }],
+  ]),
+)(() => {
+  const configuration = useSelector(
+    (state: { appConfig: { data: any } }) => state.appConfig.data,
+  );
+  const [bongosecVersion, setBongosecVersion] = useState('');
+  const [haveUdpProtocol, setHaveUdpProtocol] = useState<boolean | null>(false);
+  const [loading, setLoading] = useState(false);
+  const [bongosecPassword, setBongosecPassword] = useState('');
+  const [groups, setGroups] = useState([]);
+  const [needsPassword, setNeedsPassword] = useState<boolean>(false);
+
+  const initialFields: FormConfiguration = {
+    operatingSystemSelection: {
+      type: 'custom',
+      initialValue: '',
+      component: props => {
+        return <OsCard {...props} />;
+      },
+      options: {
+        groups,
+      },
+    },
+    serverAddress: {
+      type: 'text',
+      initialValue: configuration['enrollment.dns'] || '',
+      validate:
+        getBongosecCorePlugin().configuration._settings.get('enrollment.dns')
+          .validate,
+    },
+    agentName: {
+      type: 'text',
+      initialValue: '',
+      validate: validateAgentName,
+    },
+
+    agentGroups: {
+      type: 'custom',
+      initialValue: [],
+      component: props => {
+        return <GroupInput {...props} />;
+      },
+      options: {
+        groups,
+      },
+    },
+  };
+
+  const form = useForm(initialFields);
+
+  const getMasterConfig = async () => {
+    const masterConfig = await getMasterConfiguration();
+    if (masterConfig?.remote) {
+      setHaveUdpProtocol(masterConfig.remote.isUdp);
+    }
+    return masterConfig;
+  };
+
+  const getBongosecVersion = async () => {
+    try {
+      const result = await WzRequest.apiReq('GET', '/', {});
+      return result?.data?.data?.api_version;
+    } catch (error) {
+      const options = {
+        context: `RegisterAgent.getBongosecVersion`,
+        level: UI_LOGGER_LEVELS.ERROR,
+        severity: UI_ERROR_SEVERITIES.BUSINESS,
+        error: {
+          error: error,
+          message: error.message || error,
+          title: `Could not get the Bongosec version: ${error.message || error}`,
+        },
+      };
+      getErrorOrchestrator().handleError(options);
+      return version;
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const bongosecVersion = await getBongosecVersion();
+        const { auth: authConfig } = await getMasterConfig();
+        // get bongosec password configuration
+        let bongosecPassword = '';
+        const needsPassword = authConfig?.auth?.use_password === 'yes';
+        if (needsPassword) {
+          bongosecPassword =
+            configuration?.['enrollment.password'] ||
+            authConfig?.['authd.pass'] ||
+            '';
+        }
+        const groups = await getGroups();
+        setNeedsPassword(needsPassword);
+        setBongosecPassword(bongosecPassword);
+        setBongosecVersion(bongosecVersion);
+        setGroups(groups);
+        setLoading(false);
+      } catch (error) {
+        setBongosecVersion(bongosecVersion);
+        setLoading(false);
+        const options = {
+          context: 'RegisterAgent',
+          level: UI_LOGGER_LEVELS.ERROR,
+          severity: UI_ERROR_SEVERITIES.BUSINESS,
+          display: true,
+          store: false,
+          error: {
+            error: error,
+            message: error.message || error,
+            title: error.name || error,
+          },
+        };
+        ErrorHandler.handleError(error, options);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const osCard = (
+    <InputForm {...form.fields.operatingSystemSelection}></InputForm>
+  );
+
+  return (
+    <div>
+      <EuiPage style={{ background: 'transparent' }}>
+        <EuiPageBody>
+          <EuiFlexGroup>
+            <EuiFlexItem>
+              <EuiPanel className='register-agent-wizard-container'>
+                <EuiFlexGroup>
+                  <EuiFlexItem>
+                    <EuiTitle size='s'>
+                      <h1>Deploy new agent</h1>
+                    </EuiTitle>
+                  </EuiFlexItem>
+                </EuiFlexGroup>
+                <EuiSpacer />
+                {loading ? (
+                  <>
+                    <EuiFlexItem>
+                      <EuiProgress size='xs' color='primary' />
+                    </EuiFlexItem>
+                    <EuiSpacer></EuiSpacer>
+                  </>
+                ) : (
+                  <EuiFlexItem>
+                    <Steps
+                      form={form}
+                      needsPassword={needsPassword}
+                      bongosecPassword={bongosecPassword}
+                      osCard={osCard}
+                      connection={{
+                        isUDP: haveUdpProtocol ? true : false,
+                      }}
+                    />
+                  </EuiFlexItem>
+                )}
+              </EuiPanel>
+            </EuiFlexItem>
+          </EuiFlexGroup>
+        </EuiPageBody>
+      </EuiPage>
+    </div>
+  );
+});

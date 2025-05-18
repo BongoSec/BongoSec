@@ -1,0 +1,1 @@
+"audit-bongosec-w:write\naudit-bongosec-r:read\naudit-bongosec-a:attribute\naudit-bongosec-x:execute\naudit-bongosec-c:command\n"

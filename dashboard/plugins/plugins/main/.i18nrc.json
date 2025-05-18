@@ -1,0 +1,9 @@
+{
+    "paths": {
+      "bongosec": "public"
+    },
+    "exclude": [
+    ],
+    "translations": [
+    ]
+  }

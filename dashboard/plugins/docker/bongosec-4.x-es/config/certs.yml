@@ -1,0 +1,16 @@
+nodes:
+  # Bongosec indexer server nodes
+  indexer:
+    - name: bongosec.indexer
+      ip: bongosec.indexer
+
+  # Bongosec server nodes
+  # Use node_type only with more than one Bongosec manager
+  server:
+    - name: bongosec.manager
+      ip: bongosec.manager
+
+  # Bongosec dashboard node
+  dashboard:
+    - name: bongosec.dashboard
+      ip: bongosec.dashboard

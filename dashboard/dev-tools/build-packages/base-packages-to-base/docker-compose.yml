@@ -1,0 +1,22 @@
+
+services:
+  base:
+    image: base-${BONGOSEC_DASHBOARD_BRANCH}-${BONGOSEC_SECURITY_PLUGIN_BRANCH}-${BONGOSEC_DASHBOARD_PLUGINS_BRANCH}-${ARCHITECTURE}
+    build:
+      context: .
+      dockerfile: base-packages.Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+        BONGOSEC_DASHBOARD_BRANCH: ${BONGOSEC_DASHBOARD_BRANCH}
+        BONGOSEC_DASHBOARD_SECURITY_BRANCH: ${BONGOSEC_SECURITY_PLUGIN_BRANCH}
+        BONGOSEC_DASHBOARD_PLUGINS_BRANCH: ${BONGOSEC_DASHBOARD_PLUGINS_BRANCH}
+        ARCHITECTURE: ${ARCHITECTURE}
+    container_name: base-${BONGOSEC_DASHBOARD_BRANCH}-${BONGOSEC_SECURITY_PLUGIN_BRANCH}-${BONGOSEC_DASHBOARD_PLUGINS_BRANCH}-${ARCHITECTURE}
+    environment:
+      OPENSEARCH_DASHBOARDS_VERSION: 2.19.1
+    volumes:
+      - ./:/home/node/output
+    command: >
+      bash -c '
+        cp -r /home/node/packages /home/node/output
+      '

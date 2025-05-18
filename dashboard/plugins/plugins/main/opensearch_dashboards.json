@@ -1,0 +1,31 @@
+{
+  "id": "bongosec",
+  "version": "5.0.0-00",
+  "opensearchDashboardsVersion": "opensearchDashboards",
+  "configPath": ["bongosec"],
+  "requiredPlugins": [
+    "navigation",
+    "data",
+    "dashboard",
+    "embeddable",
+    "discover",
+    "inspector",
+    "visualizations",
+    "uiActions",
+    "charts",
+    "savedObjects",
+    "opensearchDashboardsReact",
+    "opensearchDashboardsUtils",
+    "opensearchDashboardsLegacy",
+    "bongosecCheckUpdates",
+    "bongosecCore"
+  ],
+  "optionalPlugins": [
+    "security",
+    "securityDashboards",
+    "searchguard",
+    "telemetry"
+  ],
+  "server": true,
+  "ui": true
+}

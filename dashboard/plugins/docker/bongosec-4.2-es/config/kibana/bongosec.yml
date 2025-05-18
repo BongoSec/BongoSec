@@ -1,0 +1,15 @@
+hosts:
+  - manager:
+      url: "https://bongosec.manager"
+      port: 55000
+      username: bongosec-wui
+      password: bongosec-wui
+      run_as: false
+
+  - imposter:
+      url: "http://imposter"
+      port: 8080
+      username: bongosec-wui
+      password: MyS3cr37P450r.*-
+      run_as: false
+
