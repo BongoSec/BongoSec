@@ -41,7 +41,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip wheel
-          pip install -r framework/requirements-dev.txt --no-build-isolation
+          pip install -r framework/requirements-dev.txt --no-build-isolation --ignore-installed
 
       - name: Install integration tests framework
         run: |
