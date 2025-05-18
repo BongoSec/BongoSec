@@ -1,0 +1,90 @@
+services:
+    bongosec-base:
+        build:
+            context: ./bongosec-base
+            args:
+                BONGOSEC_BRANCH: ${BONGOSEC_BRANCH}
+        image: dev-bongosec-base
+
+    bongosec-master:
+        build:
+            context: ./bongosec-manager
+            target: server
+        image: dev-bongosec-manager
+        hostname: bongosec-master
+        volumes:
+            - ${BONGOSEC_LOCAL_PATH}/framework/scripts:/var/ossec/framework/scripts
+            - ${BONGOSEC_LOCAL_PATH}/api/scripts:/var/ossec/api/scripts
+            - ${BONGOSEC_LOCAL_PATH}/framework/bongosec:/var/ossec/framework/python/lib/python${BONGOSEC_PYTHON_VERSION}/site-packages/bongosec
+            - ${BONGOSEC_LOCAL_PATH}/api/api:/var/ossec/framework/python/lib/python${BONGOSEC_PYTHON_VERSION}/site-packages/api
+        ports:
+            - "55050:55000"
+        entrypoint:
+            - /scripts/entrypoint.sh
+            - bongosec-master
+            - master-node
+            - master
+        depends_on:
+            - bongosec-base
+
+    bongosec-worker1:
+        image: dev-bongosec-manager
+        hostname: bongosec-worker1
+        volumes:
+            - ${BONGOSEC_LOCAL_PATH}/framework/scripts:/var/ossec/framework/scripts
+            - ${BONGOSEC_LOCAL_PATH}/api/scripts:/var/ossec/api/scripts
+            - ${BONGOSEC_LOCAL_PATH}/framework/bongosec:/var/ossec/framework/python/lib/python${BONGOSEC_PYTHON_VERSION}/site-packages/bongosec
+            - ${BONGOSEC_LOCAL_PATH}/api/api:/var/ossec/framework/python/lib/python${BONGOSEC_PYTHON_VERSION}/site-packages/api
+        depends_on:
+            - bongosec-master
+        ports:
+            - "55051:55000"
+        entrypoint:
+            - /scripts/entrypoint.sh
+            - bongosec-master
+            - worker1
+            - worker
+
+    bongosec-worker2:
+        image: dev-bongosec-manager
+        hostname: bongosec-worker2
+        volumes:
+            - ${BONGOSEC_LOCAL_PATH}/framework/scripts:/var/ossec/framework/scripts
+            - ${BONGOSEC_LOCAL_PATH}/api/scripts:/var/ossec/api/scripts
+            - ${BONGOSEC_LOCAL_PATH}/framework/bongosec:/var/ossec/framework/python/lib/python${BONGOSEC_PYTHON_VERSION}/site-packages/bongosec
+            - ${BONGOSEC_LOCAL_PATH}/api/api:/var/ossec/framework/python/lib/python${BONGOSEC_PYTHON_VERSION}/site-packages/api
+        depends_on:
+            - bongosec-master
+        ports:
+            - "55052:55000"
+        entrypoint:
+            - /scripts/entrypoint.sh
+            - bongosec-master
+            - worker2
+            - worker
+
+    nginx-lb:
+        build:
+            context: ./nginx-lb
+        image: dev-nginx-lb
+        restart: on-failure:5
+        entrypoint:
+            - /scripts/entrypoint.sh
+        depends_on:
+            - bongosec-master
+            - bongosec-worker1
+            - bongosec-worker2
+
+    bongosec-agent:
+        build:
+            context: ./bongosec-agent
+        image: dev-bongosec-agent
+        entrypoint:
+            - /scripts/entrypoint.sh
+            - nginx-lb
+            - ${BONGOSEC_VERSION}
+        depends_on:
+            - bongosec-master
+            - bongosec-worker1
+            - bongosec-worker2
+            - nginx-lb

@@ -1,0 +1,1 @@
+bongosec_master = __import__('bongosec-master')
