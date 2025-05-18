@@ -8,7 +8,7 @@ This module will contain all cases for the only logs after test suite
 
 import pytest
 from datetime import datetime
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing import session_parameters
 from bongosec_testing.constants.paths.aws import S3_CLOUDTRAIL_DB_PATH, AWS_SERVICES_DB_PATH
 from bongosec_testing.constants.aws import ONLY_LOGS_AFTER_PARAM, VPC_FLOW_TYPE, US_EAST_1_REGION

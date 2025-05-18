@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2023, Bongosec Inc.
+# Copyright (C) 2025, Bongosec
 # Created by BongoSec <info@khulnasoft.com>.
 # This program is free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -6,7 +6,7 @@
     This file contain constant and other utilities to be used in the AWS integration test module.
 """
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing.modules.monitord import configuration as monitord_config
 
 from os.path import join, dirname, realpath

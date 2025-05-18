@@ -8,7 +8,7 @@ This module will contain all cases for the remove from bucket test suite
 
 import pytest
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing import session_parameters
 from bongosec_testing.modules.aws.utils import log_stream_exists, file_exists
 from bongosec_testing.modules.aws.patterns import REMOVE_S3_FILE

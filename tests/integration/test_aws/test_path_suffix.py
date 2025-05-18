@@ -8,7 +8,7 @@ This module will contain all cases for the path suffix test suite
 
 import pytest
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing import session_parameters
 from bongosec_testing.constants.paths.aws import S3_CLOUDTRAIL_DB_PATH
 from bongosec_testing.utils.db_queries.aws_db import get_s3_db_row, table_exists_or_has_values

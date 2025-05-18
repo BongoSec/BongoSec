@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2023, Bongosec Inc.
+# Copyright (C) 2025, Bongosec
 # Created by BongoSec <info@khulnasoft.com>.
 # This program is free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -9,7 +9,7 @@
 from os.path import join
 from uuid import uuid4
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing.utils.configuration import (
     get_test_cases_data,
     load_configuration_template,

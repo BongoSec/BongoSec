@@ -51,9 +51,9 @@ bongosec/tests/integration/test_aws
 
 - [Proper testing environment](#setting-up-a-test-environment)
 
-- [Bongosec](https://github.com/bongosec/qa-integration-framework) repository.
+- [Bongosec](https://github.com/bongosec/qa-integration) repository.
 
-- [Testing framework](https://github.com/bongosec/qa-integration-framework) installed.
+- [Testing framework](https://github.com/bongosec/qa-integration) installed.
 
 - An Inspector assessment with test data in AWS. The rest of the necessary resources are created in test execution time.
 
@@ -155,11 +155,11 @@ _We are using **Ubuntu 22.04** for this example:_
     # Clone `bongosec` repository within your testing environment
     git clone https://github.com/bongosec/bongosec.git
 
-    # Clone the `qa-integration-framework` repository withing your testing environment
-    git clone https://github.com/bongosec/qa-integration-framework.git
+    # Clone the `qa-integration` repository withing your testing environment
+    git clone https://github.com/bongosec/qa-integration.git
   
     # Install tests dependencies
-    python3 -m pip install qa-integration-framework/
+    python3 -m pip install qa-integration/
     ```
   
 

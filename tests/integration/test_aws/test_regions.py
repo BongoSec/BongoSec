@@ -7,7 +7,7 @@ This module will contain all cases for the region test suite
 """
 import pytest
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing import session_parameters
 from bongosec_testing.constants.aws import RANDOM_ACCOUNT_ID
 from bongosec_testing.constants.paths.aws import AWS_SERVICES_DB_PATH, S3_CLOUDTRAIL_DB_PATH

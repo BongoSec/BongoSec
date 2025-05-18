@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2023, Bongosec Inc.
+# Copyright (C) 2025, Bongosec
 # Created by BongoSec <info@khulnasoft.com>.
 # This program is free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -8,7 +8,7 @@ This module will contain all callback methods to monitor and event
 
 import re
 
-# # qa-integration-framework imports
+# # qa-integration imports
 from bongosec_testing.modules.aws.patterns import (AWS_MODULE_STARTED_PARAMETRIZED,
                                                 AWS_UNDEFINED_SERVICE_TYPE, AWS_DEPRECATED_CONFIG_DEFINED,
                                                 AWS_NO_SERVICE_WARNING, AWS_MODULE_STARTED, INVALID_EMPTY_TYPE_ERROR,

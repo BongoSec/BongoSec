@@ -8,7 +8,7 @@ This module will contain all cases for the custom bucket test suite
 import pytest
 import time
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing import session_parameters
 
 # Local module imports

@@ -1,5 +1,5 @@
 """
-Copyright (C) 2015-2023, Bongosec Inc.
+Copyright (C) 2025, Bongosec
 Created by BongoSec <info@khulnasoft.com>.
 This program is free software; you can redistribute it and/or modify it under the terms of GPLv2
 
@@ -8,7 +8,7 @@ This module will contains all cases for the log groups test suite
 
 import pytest
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing import session_parameters
 from bongosec_testing.utils.db_queries.aws_db import get_multiple_service_db_row, table_exists
 from bongosec_testing.modules.aws.utils import path_exist

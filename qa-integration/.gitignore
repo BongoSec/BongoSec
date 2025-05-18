@@ -1,0 +1,32 @@
+# Python cache
+__pycache__
+.pytest_cache
+
+# Python bytecode files
+*.pyc
+.idea
+
+# Thumbnails
+._*
+
+### Pycharm ###
+.idea/*
+.idea/
+
+### VisualStudioCode ###
+.vscode/*
+.mypy_cache/
+.vs/*
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# Bongosec tools installation files
+build/
+dist/
+*.egg-info/
+venv
+dist
+
+tools/repository_bumper_*.log

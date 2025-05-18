@@ -1,0 +1,18 @@
+name: "Build Bongosec with test flags"
+description: "This action builds Bongosec on Ubuntu Linux/Windows"
+inputs:
+   target:
+     required: true
+     description: "Target specifies whether the build is for Linux or Windows"
+runs:
+  using: "composite"
+  steps:
+    - name: Set permissions and prepare the library
+      shell: bash
+      run: |
+        chmod +x .github/actions/legacy_unit_tests.sh
+    - name: Build Bongosec
+      shell: bash
+      run: |
+        source .github/actions/legacy_unit_tests.sh
+        build_bongosec_test_flags ${{ inputs.target }}

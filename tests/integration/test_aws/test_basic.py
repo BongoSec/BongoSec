@@ -7,7 +7,7 @@ This module will contain all cases for the basic test suite
 """
 import pytest
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing import session_parameters
 
 # Local module imports

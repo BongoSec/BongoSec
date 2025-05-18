@@ -8,7 +8,7 @@ This module contains all the cases for the discard_regex test suite.
 
 import pytest
 
-# qa-integration-framework imports
+# qa-integration imports
 from bongosec_testing import session_parameters
 from bongosec_testing.constants.paths.aws import S3_CLOUDTRAIL_DB_PATH, AWS_SERVICES_DB_PATH
 from bongosec_testing.modules.aws.utils import path_exist
