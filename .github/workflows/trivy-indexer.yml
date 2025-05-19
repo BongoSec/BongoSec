@@ -27,6 +27,9 @@ jobs:
 
     name: Build images and upload Trivy results
     runs-on: "ubuntu-22.04"
+    defaults:
+      run:
+        working-directory: docker
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
