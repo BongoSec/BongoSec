@@ -20,7 +20,7 @@
 ; general
 !define MUI_ICON install.ico
 !define MUI_UNICON uninstall.ico
-!define VERSION "5.0.0"
+!define VERSION "1.0.0"
 !define REVISION "alpha0"
 !define NAME "Bongosec"
 !define SERVICE "BongosecSvc"
@@ -36,7 +36,7 @@ Name "${NAME} Windows Agent v${VERSION}"
 BrandingText "Copyright (C) 2025, BongoSec"
 OutFile "${OutFile}"
 
-VIProductVersion "5.0.0.0"
+VIProductVersion "1.0.0.0"
 VIAddVersionKey ProductName "${NAME}"
 VIAddVersionKey CompanyName "Bongosec."
 VIAddVersionKey LegalCopyright "2023 - Bongosec."

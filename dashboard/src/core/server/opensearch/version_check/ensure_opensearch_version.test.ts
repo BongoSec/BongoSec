@@ -126,7 +126,7 @@ describe('mapNodesVersionCompatibility', () => {
     const result = mapNodesVersionCompatibility(nodesInfo, OPENSEARCH_DASHBOARDS_VERSION, false);
     expect(result.isCompatible).toBe(false);
     expect(result.message).toMatchInlineSnapshot(
-      `"This version of OpenSearch Dashboards (v5.1.0) is incompatible with the following OpenSearch nodes in your cluster: v5.0.0 @ http_address (ip)"`
+      `"This version of OpenSearch Dashboards (v5.1.0) is incompatible with the following OpenSearch nodes in your cluster: v1.0.0 @ http_address (ip)"`
     );
   });
 
@@ -150,7 +150,7 @@ describe('mapNodesVersionCompatibility', () => {
     );
     expect(result.isCompatible).toBe(true);
     expect(result.message).toMatchInlineSnapshot(
-      `"Ignoring version incompatibility between OpenSearch Dashboards v5.1.0 and the following OpenSearch nodes: v5.0.0 @ http_address (ip)"`
+      `"Ignoring version incompatibility between OpenSearch Dashboards v5.1.0 and the following OpenSearch nodes: v1.0.0 @ http_address (ip)"`
     );
   });
 

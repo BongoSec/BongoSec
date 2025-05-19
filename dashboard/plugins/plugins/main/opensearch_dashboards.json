@@ -1,6 +1,6 @@
 {
   "id": "bongosec",
-  "version": "5.0.0-00",
+  "version": "1.0.0-00",
   "opensearchDashboardsVersion": "opensearchDashboards",
   "configPath": ["bongosec"],
   "requiredPlugins": [

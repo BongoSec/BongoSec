@@ -2,7 +2,7 @@
 
 All notable changes to the Bongosec app project will be documented in this file.
 
-## Bongosec v5.0.0 - OpenSearch Dashboards 2.19.1 - Revision 00
+## Bongosec v1.0.0 - OpenSearch Dashboards 2.19.1 - Revision 00
 
 ### Added
 

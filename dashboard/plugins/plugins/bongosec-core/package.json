@@ -1,6 +1,6 @@
 {
   "name": "bongosec-core",
-  "version": "5.0.0",
+  "version": "1.0.0",
   "revision": "00",
   "pluginPlatform": {
     "version": "2.19.1"

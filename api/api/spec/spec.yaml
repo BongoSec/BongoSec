@@ -45,7 +45,7 @@ info:
   title: 'Bongosec API REST'
   license:
     name: 'GPL 2.0'
-    url: 'https://github.com/bongosec/bongosec/blob/v5.0.0/LICENSE'
+    url: 'https://github.com/bongosec/bongosec/blob/v1.0.0/LICENSE'
 
 servers:
   - url: '{protocol}://{host}:{port}'
@@ -7273,7 +7273,7 @@ paths:
                 api_version: "v4.5.0"
                 revision: 'beta1'
                 license_name: "GPL 2.0"
-                license_url: "https://github.com/bongosec/bongosec/blob/v5.0.0/LICENSE"
+                license_url: "https://github.com/bongosec/bongosec/blob/v1.0.0/LICENSE"
                 hostname: "bongosec"
                 timestamp: "2019-04-02T08:08:11Z"
 
@@ -13142,7 +13142,7 @@ paths:
                   current_version: v4.8.0
                   update_check: true
                   last_available_major:
-                    tag: v5.0.0
+                    tag: v1.0.0
                     description: ""
                     title: Bongosec 5.0.0
                     published_date: '2023-10-05T12:48:00Z'

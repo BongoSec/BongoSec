@@ -87,7 +87,7 @@ async def test_get_update_information_injects_correct_data_into_app_context(
         'message': '',
         'status_code': 200,
         'last_available_major': {
-            'tag': 'v5.0.0',
+            'tag': 'v1.0.0',
             'description': '',
             'title': 'Bongosec 5.0.0',
             'published_date': '2023-10-05T12:48:00Z',
