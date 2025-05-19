@@ -93,7 +93,7 @@ up)
 	echo "Install Bongosec ${BONGOSEC_VERSION} into Elastic ${ES_VERSION} manually with:"
 	echo
 	echo "1. Install the Bongosec app for Kibana"
-	echo "docker exec -ti ${COMPOSE_PROJECT_NAME}-kibana-1 /usr/share/kibana/bin/kibana-plugin install https://packages.bongosec.github.io/4.x/ui/kibana/bongosec_kibana-${BONGOSEC_VERSION}_${ES_VERSION}-1.zip"
+	echo "docker exec -ti ${COMPOSE_PROJECT_NAME}-kibana-1 /usr/share/kibana/bin/kibana-plugin install https://packages.wazuh.com/4.x/ui/kibana/bongosec_kibana-${BONGOSEC_VERSION}_${ES_VERSION}-1.zip"
 	echo
 	echo "2. Restart Kibana"
 	echo "docker restart ${COMPOSE_PROJECT_NAME}-kibana-1"
@@ -109,7 +109,7 @@ up)
 	echo "  apt update -y"
 	echo "  apt install -y curl lsb-release"
 	echo "  curl -so \bongosec-agent-${BONGOSEC_VERSION}.deb \\"
-	echo "    https://packages.bongosec.github.io/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_${BONGOSEC_VERSION}-1_amd64.deb \\"
+	echo "    https://packages.wazuh.com/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_${BONGOSEC_VERSION}-1_amd64.deb \\"
 	echo "    && BONGOSEC_MANAGER='bongosec.manager' BONGOSEC_AGENT_GROUP='default' dpkg -i ./bongosec-agent-${BONGOSEC_VERSION}.deb"
 	echo
 	echo "  /etc/init.d/bongosec-agent start"

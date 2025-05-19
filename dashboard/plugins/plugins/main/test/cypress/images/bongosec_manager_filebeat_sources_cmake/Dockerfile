@@ -44,4 +44,4 @@ EXPOSE 55000
 # BONGOSEC_VERSION - Define the Bongosec branch/tag to install. [BONGOSEC_VERSION=4.1.0]
 # FILEBEAT_VERSION - Filebeat Version
 # FILEBEAT_BONGOSEC_TEMPLATE_URL - Link with the Bongosec template. [FILEBEAT_BONGOSEC_TEMPLATE_URL=https://raw.githubusercontent.com/bongosec/bongosec/4.0/extensions/elasticsearch/7.x/bongosec-template.json]
-# FILEBEAT_BONGOSEC_MODULE_URL - Link with the Bongosec Filebeat module. [FILEBEAT_BONGOSEC_MODULE_URL=https://packages.bongosec.github.io/4.x/filebeat/bongosec-filebeat-0.4.tar.gz]
+# FILEBEAT_BONGOSEC_MODULE_URL - Link with the Bongosec Filebeat module. [FILEBEAT_BONGOSEC_MODULE_URL=https://packages.wazuh.com/4.x/filebeat/bongosec-filebeat-0.4.tar.gz]

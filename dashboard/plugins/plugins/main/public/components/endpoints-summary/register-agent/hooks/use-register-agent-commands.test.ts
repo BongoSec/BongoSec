@@ -30,14 +30,14 @@ const linuxDefinition: IOSDefinition<tOperatingSystem, tOptionalParamsNames> = {
     {
       architecture: '32/64',
       urlPackage: props =>
-        `https://packages.bongosec.github.io/4.x/yum/bongosec-agent-${props.bongosecVersion}-1.x86_64`,
+        `https://packages.wazuh.com/4.x/yum/bongosec-agent-${props.bongosecVersion}-1.x86_64`,
       installCommand: props => `sudo yum install -y ${props.urlPackage}`,
       startCommand: props => `sudo systemctl start bongosec-agent`,
     },
     {
       architecture: 'x64',
       urlPackage: props =>
-        `https://packages.bongosec.github.io/4.x/apt/pool/main/w/bongosec-agent/ bongosec-agent_${props.bongosecVersion}-1_${props.architecture}`,
+        `https://packages.wazuh.com/4.x/apt/pool/main/w/bongosec-agent/ bongosec-agent_${props.bongosecVersion}-1_${props.architecture}`,
       installCommand: props =>
         `curl -so bongosec-agent.deb ${props.urlPackage} && sudo dpkg -i ./bongosec-agent.deb`,
       startCommand: props => `sudo systemctl start bongosec-agent`,

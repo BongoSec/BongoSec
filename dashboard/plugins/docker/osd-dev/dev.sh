@@ -144,7 +144,7 @@ up)
      echo "  apt update -y"
      echo "  apt install -y curl lsb-release"
      echo "  curl -so \bongosec-agent-\${BONGOSEC_AGENT_VERSION}.deb \\"
-     echo "    https://packages.bongosec.github.io/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_\${BONGOSEC_AGENT_VERSION}-1_amd64.deb \\"
+     echo "    https://packages.wazuh.com/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_\${BONGOSEC_AGENT_VERSION}-1_amd64.deb \\"
      echo "    && BONGOSEC_MANAGER='bongosec.manager' BONGOSEC_AGENT_GROUP='default' dpkg -i ./bongosec-agent-\${BONGOSEC_AGENT_VERSION}.deb"
      echo
      echo "  /etc/init.d/bongosec-agent start"

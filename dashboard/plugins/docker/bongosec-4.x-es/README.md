@@ -66,7 +66,7 @@ Will print:
 Install Bongosec 4.3.8 into Elastic 7.16.3 manually with:
 
 1. Install the Bongosec app for Kibana
-docker exec -ti es-rel-7163-kibana-1 /usr/share/kibana/bin/kibana-plugin install https://packages.bongosec.github.io/4.x/ui/kibana/bongosec_kibana-4.3.8_7.16.3-1.zip
+docker exec -ti es-rel-7163-kibana-1 /usr/share/kibana/bin/kibana-plugin install https://packages.wazuh.com/4.x/ui/kibana/bongosec_kibana-4.3.8_7.16.3-1.zip
 
 2. Restart Kibana
 docker restart es-rel-7163-kibana-1
@@ -86,7 +86,7 @@ automatism will need:
 2. Execute the Bongosec plugin installation command:
 
 ```bash
-docker exec -ti es-rel-7163-kibana-1 /usr/share/kibana/bin/kibana-plugin install https://packages.bongosec.github.io/4.x/ui/kibana/bongosec_kibana-4.3.8_7.16.3-1.zip
+docker exec -ti es-rel-7163-kibana-1 /usr/share/kibana/bin/kibana-plugin install https://packages.wazuh.com/4.x/ui/kibana/bongosec_kibana-4.3.8_7.16.3-1.zip
 ```
 
 3. Restart the Kibana container to enable Bongosec:
@@ -122,7 +122,7 @@ the agent `ossec.log` file.
       sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
 
       # Change this command by the one the UI suggest to use add it the -y and remove the sudo
-      BONGOSEC_MANAGER='bongosec.manager' yum install -y https://packages.bongosec.github.io/4.x/yum5/x86_64/bongosec-agent-4.3.8-1.el5.x86_64.rpm
+      BONGOSEC_MANAGER='bongosec.manager' yum install -y https://packages.wazuh.com/4.x/yum5/x86_64/bongosec-agent-4.3.8-1.el5.x86_64.rpm
 
       /etc/init.d/bongosec-agent start
       tail -f /var/ossec/logs/ossec.log
@@ -135,7 +135,7 @@ the agent `ossec.log` file.
       apt update -y
       apt install -y curl lsb-release
       # Change this command by the one the UI suggest to use add it tremove the sudo
-      curl -so bongosec-agent-4.3.8.deb https://packages.bongosec.github.io/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_4.3.8-1_amd64.deb && BONGOSEC_MANAGER='bongosec.manager' dpkg -i ./bongosec-agent-4.3.8.deb
+      curl -so bongosec-agent-4.3.8.deb https://packages.wazuh.com/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_4.3.8-1_amd64.deb && BONGOSEC_MANAGER='bongosec.manager' dpkg -i ./bongosec-agent-4.3.8.deb
 
       /etc/init.d/bongosec-agent start
       tail -f /var/ossec/logs/ossec.log

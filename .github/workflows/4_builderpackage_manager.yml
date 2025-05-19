@@ -260,10 +260,10 @@ jobs:
 
           if [ "${{ inputs.system }}" = "deb" ]; then
             FILE_NAME_PUBLIC="bongosec-manager_${VERSION}-1_${ARCH}.deb"
-            BASE_URL="https://packages.bongosec.github.io/4.x/apt/pool/main/w/bongosec-manager"
+            BASE_URL="https://packages.wazuh.com/4.x/apt/pool/main/w/bongosec-manager"
           elif [ "${{ inputs.system }}" = "rpm" ]; then
             FILE_NAME_PUBLIC="bongosec-manager-${VERSION}-1.${ARCH}.rpm"
-            BASE_URL="https://packages.bongosec.github.io/4.x/yum"
+            BASE_URL="https://packages.wazuh.com/4.x/yum"
           else
             echo "Unsupported system type: ${{ inputs.system }}"
             exit 1

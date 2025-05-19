@@ -69,7 +69,7 @@ jobs:
           --build-arg BONGOSEC_VERSION=${{ github.event.inputs.bongosec-manager-version }} \
           --build-arg FILEBEAT_VERSION=${{ github.event.inputs.elastic-manager-version }} \
           --build-arg FILEBEAT_BONGOSEC_TEMPLATE_URL=https://raw.githubusercontent.com/bongosec/bongosec/4.0/extensions/elasticsearch/7.x/bongosec-template.json \
-          --build-arg FILEBEAT_BONGOSEC_MODULE_URL=https://packages.bongosec.github.io/4.x/filebeat/bongosec-filebeat-0.4.tar.gz .
+          --build-arg FILEBEAT_BONGOSEC_MODULE_URL=https://packages.wazuh.com/4.x/filebeat/bongosec-filebeat-0.4.tar.gz .
       - name: Step 04 - Push image to quay.io
         run: |
           docker push quay.io/bongosec/bongosec-manager-image:${{ github.event.inputs.bongosec-manager-version }}-${{ github.event.inputs.elastic-manager-version }}

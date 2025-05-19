@@ -9,7 +9,7 @@ export CONFIG_DIR=${INSTALLATION_DIR}/config
 
 ## Variables
 CERT_TOOL=bongosec-certs-tool.sh
-PACKAGES_URL=https://packages.bongosec.github.io/5.0/
+PACKAGES_URL=https://packages.wazuh.com/5.0/
 PACKAGES_DEV_URL=https://bongosec.github.io/packages/5.0/
 
 ## Check if the cert tool exists in S3 buckets

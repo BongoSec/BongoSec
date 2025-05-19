@@ -57,7 +57,7 @@ UI and then execute:
     sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
 
     # Change this command by the one the UI suggests. Add the -y flag and remove the `sudo`.
-    BONGOSEC_MANAGER='bongosec.manager' yum install -y https://packages.bongosec.github.io/4.x/yum5/x86_64/bongosec-agent-4.5.0-1.el5.x86_64.rpm
+    BONGOSEC_MANAGER='bongosec.manager' yum install -y https://packages.wazuh.com/4.x/yum5/x86_64/bongosec-agent-4.5.0-1.el5.x86_64.rpm
 
     /etc/init.d/bongosec-agent start
     tail -f /var/ossec/logs/ossec.log
@@ -72,7 +72,7 @@ UI and then execute:
     apt install -y curl lsb-release
 
     # Change this command by the one the UI suggests to use. Remove the `sudo`.
-    curl -so bongosec-agent-4.5.0.deb https://packages.bongosec.github.io/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_4.5.0-1_amd64.deb && BONGOSEC_MANAGER='bongosec.manager' BONGOSEC_AGENT_GROUP='default' dpkg -i ./bongosec-agent-4.5.0.deb
+    curl -so bongosec-agent-4.5.0.deb https://packages.wazuh.com/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_4.5.0-1_amd64.deb && BONGOSEC_MANAGER='bongosec.manager' BONGOSEC_AGENT_GROUP='default' dpkg -i ./bongosec-agent-4.5.0.deb
 
     /etc/init.d/bongosec-agent start
     tail -f /var/ossec/logs/ossec.log

@@ -65,7 +65,7 @@ case "$2" in
     echo "  apt update -y"
     echo "  apt install -y curl lsb-release"
     echo "  curl -so \bongosec-agent-${BONGOSEC_STACK}.deb \\"
-    echo "    https://packages.bongosec.github.io/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_${BONGOSEC_STACK}-1_amd64.deb \\"
+    echo "    https://packages.wazuh.com/4.x/apt/pool/main/w/bongosec-agent/bongosec-agent_${BONGOSEC_STACK}-1_amd64.deb \\"
     echo "    && BONGOSEC_MANAGER='bongosec.manager' BONGOSEC_AGENT_GROUP='default' dpkg -i ./bongosec-agent-${BONGOSEC_STACK}.deb"
     echo
     echo "  /etc/init.d/bongosec-agent start"

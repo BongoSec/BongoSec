@@ -5,7 +5,7 @@
 The Bongosec Filebeat module is hosted at the following URLs
 
 - Production:
-  - https://packages.bongosec.github.io/4.x/filebeat/
+  - https://packages.wazuh.com/4.x/filebeat/
 - Development:
   - https://bongosec.github.io/packages/pre-release/filebeat/
   - https://bongosec.github.io/packages/staging/filebeat/

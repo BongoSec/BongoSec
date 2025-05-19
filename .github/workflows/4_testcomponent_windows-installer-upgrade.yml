@@ -56,7 +56,7 @@ jobs:
       - name: Download released .msi
         run: |
           mkdir C:\win-agent-released
-          python -m wget https://packages.bongosec.github.io/4.x/windows/bongosec-agent-${{ matrix.bongosec_version }}.msi -o C:\win-agent-released
+          python -m wget https://packages.wazuh.com/4.x/windows/bongosec-agent-${{ matrix.bongosec_version }}.msi -o C:\win-agent-released
       - name: Download base folder
         uses: actions/download-artifact@v4
         with:

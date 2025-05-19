@@ -51,7 +51,7 @@ services:
         echo admin | filebeat keystore add username --stdin --force
         echo ${ELASTIC_PASSWORD}| filebeat keystore add password --stdin --force
         curl -so /etc/filebeat/bongosec-template.json https://raw.githubusercontent.com/bongosec/bongosec/4.3/extensions/elasticsearch/7.x/bongosec-template.json
-        curl -s https://packages.bongosec.github.io/4.x/filebeat/bongosec-filebeat-0.4.tar.gz | tar -xvz -C /usr/share/filebeat/module
+        curl -s https://packages.wazuh.com/4.x/filebeat/bongosec-filebeat-0.4.tar.gz | tar -xvz -C /usr/share/filebeat/module
         # copy filebeat to preserve correct permissions without
         # affecting host filesystem
         cp /tmp/filebeat.yml /usr/share/filebeat/filebeat.yml
