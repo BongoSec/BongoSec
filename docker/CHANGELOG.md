@@ -24,11 +24,11 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Added repository_bumper script. ([#1781](https://github.com/bongosec/bongosec-docker/pull/1781))
+- Added repository_bumper script. ([#1781](https://github.com/bongosec/bongosec/pull/1781))
 
 ### Changed
 
-- Modify bongosec-keystore use ([#1750](https://github.com/bongosec/bongosec-docker/pull/1750)) \- (bongosec-keystore)
+- Modify bongosec-keystore use ([#1750](https://github.com/bongosec/bongosec/pull/1750)) \- (bongosec-keystore)
 
 ### Fixed
 
@@ -36,8 +36,8 @@ All notable changes to this project will be documented in this file.
 
 ### Deleted
 
-- Remove default docker reference version from workflow ([#1761](https://github.com/bongosec/bongosec-docker/pull/1761))
-- Remove 'stable' branch ocurrencies ([#1757](https://github.com/bongosec/bongosec-docker/pull/1757))
+- Remove default docker reference version from workflow ([#1761](https://github.com/bongosec/bongosec/pull/1761))
+- Remove 'stable' branch ocurrencies ([#1757](https://github.com/bongosec/bongosec/pull/1757))
 
 ## [4.12.2]
 
@@ -84,12 +84,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Change VERSION file format ([#1728](https://github.com/bongosec/bongosec-docker/pull/1728)) \- (VERSION file)
-- Change Ubuntu version used in workflows ([#1662](https://github.com/bongosec/bongosec-docker/pull/1662)) \- (Docker workflows)
+- Change VERSION file format ([#1728](https://github.com/bongosec/bongosec/pull/1728)) \- (VERSION file)
+- Change Ubuntu version used in workflows ([#1662](https://github.com/bongosec/bongosec/pull/1662)) \- (Docker workflows)
 
 ### Fixed
 
-- Fix permanent data scripts ([#1603](https://github.com/bongosec/bongosec-docker/pull/1603))
+- Fix permanent data scripts ([#1603](https://github.com/bongosec/bongosec/pull/1603))
 
 ### Deleted
 
@@ -143,7 +143,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- Change the cleaning disk step ([#1663](https://github.com/bongosec/bongosec-docker/pull/1663))
+- Change the cleaning disk step ([#1663](https://github.com/bongosec/bongosec/pull/1663))
 
 ### Deleted
 
@@ -171,9 +171,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Improve the push docker images workflow ([#1551](https://github.com/bongosec/bongosec-docker/pull/1551))
-- Update the Procedure push docker images workflow file ([#1524](https://github.com/bongosec/bongosec-docker/pull/1524))
-- Add the push_docker_images procedure workflow file ([#1518](https://github.com/bongosec/bongosec-docker/pull/1518))
+- Improve the push docker images workflow ([#1551](https://github.com/bongosec/bongosec/pull/1551))
+- Update the Procedure push docker images workflow file ([#1524](https://github.com/bongosec/bongosec/pull/1524))
+- Add the push_docker_images procedure workflow file ([#1518](https://github.com/bongosec/bongosec/pull/1518))
 
 ### Changed
 
@@ -181,8 +181,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- Add unset capabilities. ([#1619](https://github.com/bongosec/bongosec-docker/pull/1619))
-- Removed references to module enabling because they are now enabled by default. ([#1416](https://github.com/bongosec/bongosec-docker/pull/1416))
+- Add unset capabilities. ([#1619](https://github.com/bongosec/bongosec/pull/1619))
+- Removed references to module enabling because they are now enabled by default. ([#1416](https://github.com/bongosec/bongosec/pull/1416))
 
 ### Deleted
 
@@ -207,7 +207,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- Fix typos into Bongosec manager entrypoint ([#1569](https://github.com/bongosec/bongosec-docker/pull/1569))
+- Fix typos into Bongosec manager entrypoint ([#1569](https://github.com/bongosec/bongosec/pull/1569))
 
 ### Deleted
 
@@ -457,9 +457,9 @@ All notable changes to this project will be documented in this file.
 
 - Update Bongosec to version [4.1.0](https://github.com/bongosec/bongosec/blob/v4.1.0/CHANGELOG.md#v410)
 - Update ODFE compatibility to version 1.12.0
-- Add support for Elasticsearch (xpack) images once again (7.10.2)  ([@xr09](https://github.com/xr09)) [#409](https://github.com/bongosec/bongosec-docker/pull/409)
-- Re-enable entrypoint scripts  ([@xr09](https://github.com/xr09)) [#435](https://github.com/bongosec/bongosec-docker/pull/435)
-- Add Goss binary for healthchecks ([@xr09](https://github.com/xr09)) [$441](https://github.com/bongosec/bongosec-docker/pull/441)
+- Add support for Elasticsearch (xpack) images once again (7.10.2)  ([@xr09](https://github.com/xr09)) [#409](https://github.com/bongosec/bongosec/pull/409)
+- Re-enable entrypoint scripts  ([@xr09](https://github.com/xr09)) [#435](https://github.com/bongosec/bongosec/pull/435)
+- Add Goss binary for healthchecks ([@xr09](https://github.com/xr09)) [$441](https://github.com/bongosec/bongosec/pull/441)
 - Update s6-overlay to latest version
 
 ## Bongosec Docker v4.0.4_1.11.0
@@ -495,11 +495,11 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Update to Bongosec version 4.0.0
-- Updating Bongosec cluster key dynamically ([@1stOfHisGame](https://github.com/1stOfHisGame))  [#393](https://github.com/bongosec/bongosec-docker/pull/393)
-- Switched to CentOS 7 for base image ([@xr09](https://github.com/xr09)) [#259](https://github.com/bongosec/bongosec-docker/issues/259)
-- Using s6-overlay for process management ([@xr09](https://github.com/xr09)) [#274](https://github.com/bongosec/bongosec-docker/issues/274)
-- Allow the creation of custom API users ([@xr09](https://github.com/xr09)) [#395](https://github.com/bongosec/bongosec-docker/issues/395)
-- OpenDistro support ([@xr09](https://github.com/xr09)) [#373](https://github.com/bongosec/bongosec-docker/pull/373)
+- Updating Bongosec cluster key dynamically ([@1stOfHisGame](https://github.com/1stOfHisGame))  [#393](https://github.com/bongosec/bongosec/pull/393)
+- Switched to CentOS 7 for base image ([@xr09](https://github.com/xr09)) [#259](https://github.com/bongosec/bongosec/issues/259)
+- Using s6-overlay for process management ([@xr09](https://github.com/xr09)) [#274](https://github.com/bongosec/bongosec/issues/274)
+- Allow the creation of custom API users ([@xr09](https://github.com/xr09)) [#395](https://github.com/bongosec/bongosec/issues/395)
+- OpenDistro support ([@xr09](https://github.com/xr09)) [#373](https://github.com/bongosec/bongosec/pull/373)
 
 
 ### Changed
@@ -512,12 +512,12 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Update to Bongosec version 3.13.2_7.9.1
-- Add CLUSTER_NETWORK_HOST environment variable ([@jfut](https://github.com/jfut)) [#372](https://github.com/bongosec/bongosec-docker/pull/372)
+- Add CLUSTER_NETWORK_HOST environment variable ([@jfut](https://github.com/jfut)) [#372](https://github.com/bongosec/bongosec/pull/372)
 
 ### Fixed
 
-- Too many redirects when running on port 80 ([@chowmean](https://github.com/chowmean)) [#377](https://github.com/bongosec/bongosec-docker/pull/377)
-- Move Filebeat installation to build stage ([@xr09](https://github.com/xr09)) [#378](https://github.com/bongosec/bongosec-docker/pull/378)
+- Too many redirects when running on port 80 ([@chowmean](https://github.com/chowmean)) [#377](https://github.com/bongosec/bongosec/pull/377)
+- Move Filebeat installation to build stage ([@xr09](https://github.com/xr09)) [#378](https://github.com/bongosec/bongosec/pull/378)
 
 
 ## Bongosec Docker v3.13.1_7.8.0
@@ -535,8 +535,8 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- Save agentless state ([@xr09](https://github.com/xr09)) [#350](https://github.com/bongosec/bongosec-docker/pull/350)
-- Use HTTP credentials for service check when required ([@xr09](https://github.com/xr09)) [#356](https://github.com/bongosec/bongosec-docker/pull/356)
+- Save agentless state ([@xr09](https://github.com/xr09)) [#350](https://github.com/bongosec/bongosec/pull/350)
+- Use HTTP credentials for service check when required ([@xr09](https://github.com/xr09)) [#356](https://github.com/bongosec/bongosec/pull/356)
 
 ## Bongosec Docker v3.12.3_7.6.2
 
@@ -559,7 +559,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- Agent timestamp not being properly saved ([@xr09](https://github.com/xr09)) [#323](https://github.com/bongosec/bongosec-docker/pull/323)
+- Agent timestamp not being properly saved ([@xr09](https://github.com/xr09)) [#323](https://github.com/bongosec/bongosec/pull/323)
 
 
 ## Bongosec Docker v3.12.0_7.6.1
@@ -575,11 +575,11 @@ All notable changes to this project will be documented in this file.
 
 - Update to Bongosec version 3.11.4_7.6.1
 
-- Enable HTTP v2 on nginx ([@xr09](https://github.com/xr09)) [#308](https://github.com/bongosec/bongosec-docker/pull/308)
+- Enable HTTP v2 on nginx ([@xr09](https://github.com/xr09)) [#308](https://github.com/bongosec/bongosec/pull/308)
 
 ### Fixed
 
-- Updated NGINX config syntax ([@xr09](https://github.com/xr09)) [#303](https://github.com/bongosec/bongosec-docker/pull/303)
+- Updated NGINX config syntax ([@xr09](https://github.com/xr09)) [#303](https://github.com/bongosec/bongosec/pull/303)
 
 
 ## Bongosec Docker v3.11.3_7.5.2
@@ -592,19 +592,19 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Bumped Node.js to version 10 ([@xr09](https://github.com/xr09)) [#8615cd4](https://github.com/bongosec/bongosec-docker/commit/8615cd4d2152601e55becc7c3675360938e74b6a)
+- Bumped Node.js to version 10 ([@xr09](https://github.com/xr09)) [#8615cd4](https://github.com/bongosec/bongosec/commit/8615cd4d2152601e55becc7c3675360938e74b6a)
 
 ### Fixed
 
-- Fix S3 Plugin ([@AnthonySendra](https://github.com/AnthonySendra)) [#293](https://github.com/bongosec/bongosec-docker/pull/293)
+- Fix S3 Plugin ([@AnthonySendra](https://github.com/AnthonySendra)) [#293](https://github.com/bongosec/bongosec/pull/293)
 
 ## Bongosec Docker v3.11.1_7.5.1
 
 ### Added
 
 - Update to Bongosec version 3.11.1_7.5.1
-- Filebeat configuration file updated to latest version ([@manuasir](https://github.com/manuasir)) [#271](https://github.com/bongosec/bongosec-docker/pull/271)
-- Allow using the hostname as node_name for managers ([@JPLachance](https://github.com/JPLachance)) [#261](https://github.com/bongosec/bongosec-docker/pull/261)
+- Filebeat configuration file updated to latest version ([@manuasir](https://github.com/manuasir)) [#271](https://github.com/bongosec/bongosec/pull/271)
+- Allow using the hostname as node_name for managers ([@JPLachance](https://github.com/JPLachance)) [#261](https://github.com/bongosec/bongosec/pull/261)
 
 ## Bongosec Docker v3.11.0_7.5.1
 
@@ -641,12 +641,12 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Update to Bongosec version 3.9.4_7.2.0
-- Implemented Bongosec Filebeat Module ([jm404](https://www.github.com/jm404)) [#2a77c6a](https://github.com/bongosec/bongosec-docker/commit/2a77c6a6e6bf78f2492adeedbade7a507d9974b2)
+- Implemented Bongosec Filebeat Module ([jm404](https://www.github.com/jm404)) [#2a77c6a](https://github.com/bongosec/bongosec/commit/2a77c6a6e6bf78f2492adeedbade7a507d9974b2)
 
 ## Bongosec Docker v3.9.3_7.2.0
 
 ### Fixed
-- Bongosec-docker reinserts cluster settings after resuming containers ([@manuasir](https://github.com/manuasir)) [#213](https://github.com/bongosec/bongosec-docker/pull/213)
+- Bongosec-docker reinserts cluster settings after resuming containers ([@manuasir](https://github.com/manuasir)) [#213](https://github.com/bongosec/bongosec/pull/213)
 
 ## Bongosec Docker v3.9.2_7.1.1
 
@@ -665,17 +665,17 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Support for Elastic v7.1.0
-- New environment variables for Kibana ([@manuasir](https://github.com/manuasir)) [#22ad43](https://github.com/bongosec/bongosec-docker/commit/22ad4360f548e54bb0c5e929f8c84a186ad2ab88)
+- New environment variables for Kibana ([@manuasir](https://github.com/manuasir)) [#22ad43](https://github.com/bongosec/bongosec/commit/22ad4360f548e54bb0c5e929f8c84a186ad2ab88)
 
 ## Bongosec Docker v3.9.1_6.8.0
 
 ### Added
 
-- Update to Bongosec version 3.9.1_6.8.0 ([#181](https://github.com/bongosec/bongosec-docker/pull/181))
+- Update to Bongosec version 3.9.1_6.8.0 ([#181](https://github.com/bongosec/bongosec/pull/181))
 
 ### Fixed
 
-- Fixed `ELASTICSEARCH_KIBANA_IP` environment variable ([@manuasir](https://github.com/manuasir)) ([#181](https://github.com/bongosec/bongosec-docker/pull/181))
+- Fixed `ELASTICSEARCH_KIBANA_IP` environment variable ([@manuasir](https://github.com/manuasir)) ([#181](https://github.com/bongosec/bongosec/pull/181))
 
 ## Bongosec Docker v3.9.0_6.7.2
 
@@ -687,101 +687,101 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Support for xPACK authorized requests ([@manuasir](https://github.com/manuasir)) ([#119](https://github.com/bongosec/bongosec-docker/pull/119))
-- Add Elasticsearch cluster configuration ([@SitoRBJ](https://github.com/SitoRBJ)). ([#146](https://github.com/bongosec/bongosec-docker/pull/146))
-- Add Elasticsearch cluster configuration ([@Phandora](https://github.com/Phandora)) ([#140](https://github.com/bongosec/bongosec-docker/pull/140))
-- Setting Nginx to support several user/passwords in Kibana ([@toniMR](https://github.com/toniMR)) ([#136](https://github.com/bongosec/bongosec-docker/pull/136))
+- Support for xPACK authorized requests ([@manuasir](https://github.com/manuasir)) ([#119](https://github.com/bongosec/bongosec/pull/119))
+- Add Elasticsearch cluster configuration ([@SitoRBJ](https://github.com/SitoRBJ)). ([#146](https://github.com/bongosec/bongosec/pull/146))
+- Add Elasticsearch cluster configuration ([@Phandora](https://github.com/Phandora)) ([#140](https://github.com/bongosec/bongosec/pull/140))
+- Setting Nginx to support several user/passwords in Kibana ([@toniMR](https://github.com/toniMR)) ([#136](https://github.com/bongosec/bongosec/pull/136))
 
 
 ### Changed
 
-- Use LS_JAVA_OPTS instead of old LS_HEAP_SIZE ([@ruffy91](https://github.com/ruffy91)) ([#139](https://github.com/bongosec/bongosec-docker/pull/139))
-- Changing the original Bongosec docker image to allow adding code in the entrypoint ([@Phandora](https://github.com/phandora)) ([#151](https://github.com/bongosec/bongosec-docker/pull/151))
+- Use LS_JAVA_OPTS instead of old LS_HEAP_SIZE ([@ruffy91](https://github.com/ruffy91)) ([#139](https://github.com/bongosec/bongosec/pull/139))
+- Changing the original Bongosec docker image to allow adding code in the entrypoint ([@Phandora](https://github.com/phandora)) ([#151](https://github.com/bongosec/bongosec/pull/151))
 
 ### Removed
 
-- Removing files from Bongosec image ([@Phandora](https://github.com/phandora)) ([#153](https://github.com/bongosec/bongosec-docker/pull/153))
+- Removing files from Bongosec image ([@Phandora](https://github.com/phandora)) ([#153](https://github.com/bongosec/bongosec/pull/153))
 
 ## Bongosec Docker v3.8.2_6.7.0
 
 ### Changed
 
-- Update Elastic Stack version to 6.7.0. ([#144](https://github.com/bongosec/bongosec-docker/pull/144))
+- Update Elastic Stack version to 6.7.0. ([#144](https://github.com/bongosec/bongosec/pull/144))
 
 ## Bongosec Docker v3.8.2_6.6.2
 
 ### Changed
 
-- Update Elastic Stack version to 6.6.2. ([#130](https://github.com/bongosec/bongosec-docker/pull/130))
+- Update Elastic Stack version to 6.6.2. ([#130](https://github.com/bongosec/bongosec/pull/130))
 
 ## Bongosec Docker v3.8.2_6.6.1
 
 ### Changed
 
-- Update Elastic Stack version to 6.6.1. ([#129](https://github.com/bongosec/bongosec-docker/pull/129))
+- Update Elastic Stack version to 6.6.1. ([#129](https://github.com/bongosec/bongosec/pull/129))
 
 ## Bongosec Docker v3.8.2_6.5.4
 
 ### Added
 
-- Add Bongosec-Elasticsearch. ([#106](https://github.com/bongosec/bongosec-docker/pull/106))
-- Store Filebeat _/var/lib/filebeat/registry._ ([#109](https://github.com/bongosec/bongosec-docker/pull/109))
-- Adding the option to disable some xpack features. ([#111](https://github.com/bongosec/bongosec-docker/pull/111))
-- Bongosec-Kibana customizable at plugin level. ([#117](https://github.com/bongosec/bongosec-docker/pull/117))
-- Adding env variables for alerts data flow. ([#118](https://github.com/bongosec/bongosec-docker/pull/118))
-- New Logstash entrypoint added. ([#135](https://github.com/bongosec/bongosec-docker/pull/135/files))
-- Welcome screen management. ([#133](https://github.com/bongosec/bongosec-docker/pull/133))
+- Add Bongosec-Elasticsearch. ([#106](https://github.com/bongosec/bongosec/pull/106))
+- Store Filebeat _/var/lib/filebeat/registry._ ([#109](https://github.com/bongosec/bongosec/pull/109))
+- Adding the option to disable some xpack features. ([#111](https://github.com/bongosec/bongosec/pull/111))
+- Bongosec-Kibana customizable at plugin level. ([#117](https://github.com/bongosec/bongosec/pull/117))
+- Adding env variables for alerts data flow. ([#118](https://github.com/bongosec/bongosec/pull/118))
+- New Logstash entrypoint added. ([#135](https://github.com/bongosec/bongosec/pull/135/files))
+- Welcome screen management. ([#133](https://github.com/bongosec/bongosec/pull/133))
 
 ### Changed
 
-- Update to Bongosec version 3.8.2. ([#105](https://github.com/bongosec/bongosec-docker/pull/105))
+- Update to Bongosec version 3.8.2. ([#105](https://github.com/bongosec/bongosec/pull/105))
 
 ### Removed
 
-- Remove alerts created in build time. ([#137](https://github.com/bongosec/bongosec-docker/pull/137))
+- Remove alerts created in build time. ([#137](https://github.com/bongosec/bongosec/pull/137))
 
 
 ## Bongosec Docker v3.8.1_6.5.4
 
 ### Changed
-- Update to Bongosec version 3.8.1. ([#102](https://github.com/bongosec/bongosec-docker/pull/102))
+- Update to Bongosec version 3.8.1. ([#102](https://github.com/bongosec/bongosec/pull/102))
 
 ## Bongosec Docker v3.8.0_6.5.4
 
 ### Changed
 
-- Upgrade version 3.8.0_6.5.4. ([#97](https://github.com/bongosec/bongosec-docker/pull/97))
+- Upgrade version 3.8.0_6.5.4. ([#97](https://github.com/bongosec/bongosec/pull/97))
 
 ### Removed
 
-- Remove cluster.py work around. ([#99](https://github.com/bongosec/bongosec-docker/pull/99))
+- Remove cluster.py work around. ([#99](https://github.com/bongosec/bongosec/pull/99))
 
 ## Bongosec Docker v3.7.2_6.5.4
 
 ### Added
 
-- Improvements to Kibana settings added. ([#91](https://github.com/bongosec/bongosec-docker/pull/91))
-- Add Kibana environmental variables for Bongosec APP config.yml. ([#89](https://github.com/bongosec/bongosec-docker/pull/89))
+- Improvements to Kibana settings added. ([#91](https://github.com/bongosec/bongosec/pull/91))
+- Add Kibana environmental variables for Bongosec APP config.yml. ([#89](https://github.com/bongosec/bongosec/pull/89))
 
 ### Changed
 
-- Update Elastic Stack version to 6.5.4. ([#82](https://github.com/bongosec/bongosec-docker/pull/82))
-- Add env credentials for nginx. ([#86](https://github.com/bongosec/bongosec-docker/pull/86))
-- Improve filebeat configuration ([#88](https://github.com/bongosec/bongosec-docker/pull/88))
+- Update Elastic Stack version to 6.5.4. ([#82](https://github.com/bongosec/bongosec/pull/82))
+- Add env credentials for nginx. ([#86](https://github.com/bongosec/bongosec/pull/86))
+- Improve filebeat configuration ([#88](https://github.com/bongosec/bongosec/pull/88))
 
 ### Fixed
 
-- Temporary fix for Bongosec cluster master node in Kubernetes. ([#84](https://github.com/bongosec/bongosec-docker/pull/84))
+- Temporary fix for Bongosec cluster master node in Kubernetes. ([#84](https://github.com/bongosec/bongosec/pull/84))
 
 ## Bongosec Docker v3.7.2_6.5.3
 
 ### Changed
 
-- Erasing temporary fix for AWS integration. ([#81](https://github.com/bongosec/bongosec-docker/pull/81))
+- Erasing temporary fix for AWS integration. ([#81](https://github.com/bongosec/bongosec/pull/81))
 
 ### Fixed
 
-- Upgrading errors due to wrong files. ([#80](https://github.com/bongosec/bongosec-docker/pull/80))
+- Upgrading errors due to wrong files. ([#80](https://github.com/bongosec/bongosec/pull/80))
 
 
 ## Bongosec Docker v3.7.0_6.5.0
@@ -794,21 +794,21 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Allow custom scripts or commands before service start ([#58](https://github.com/bongosec/bongosec-docker/pull/58))
-- Added description for bongosec-nginx ([#59](https://github.com/bongosec/bongosec-docker/pull/59))
-- Added license file to match https://github.com/bongosec/bongosec LICENSE ([#60](https://github.com/bongosec/bongosec-docker/pull/60))
-- Added SMTP packages ([#67](https://github.com/bongosec/bongosec-docker/pull/67))
+- Allow custom scripts or commands before service start ([#58](https://github.com/bongosec/bongosec/pull/58))
+- Added description for bongosec-nginx ([#59](https://github.com/bongosec/bongosec/pull/59))
+- Added license file to match https://github.com/bongosec/bongosec LICENSE ([#60](https://github.com/bongosec/bongosec/pull/60))
+- Added SMTP packages ([#67](https://github.com/bongosec/bongosec/pull/67))
 
 ### Changed
 
-- Increased proxy buffer for NGINX Kibana ([#51](https://github.com/bongosec/bongosec-docker/pull/51))
-- Updated logstash config to remove deprecation warnings ([#55](https://github.com/bongosec/bongosec-docker/pull/55))
-- Set ossec user's home path ([#61](https://github.com/bongosec/bongosec-docker/pull/61))
+- Increased proxy buffer for NGINX Kibana ([#51](https://github.com/bongosec/bongosec/pull/51))
+- Updated logstash config to remove deprecation warnings ([#55](https://github.com/bongosec/bongosec/pull/55))
+- Set ossec user's home path ([#61](https://github.com/bongosec/bongosec/pull/61))
 
 ### Fixed
 
-- Fixed a bug that prevents the API from starting when the Bongosec manager was updated. Change in the files that are stored in the volume.  ([#65](https://github.com/bongosec/bongosec-docker/pull/65))
-- Fixed script reference ([#62](https://github.com/bongosec/bongosec-docker/pull/62/files))
+- Fixed a bug that prevents the API from starting when the Bongosec manager was updated. Change in the files that are stored in the volume.  ([#65](https://github.com/bongosec/bongosec/pull/65))
+- Fixed script reference ([#62](https://github.com/bongosec/bongosec/pull/62/files))
 
 ## Bongosec Docker v3.6.1_6.4.3
 
