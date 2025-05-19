@@ -9,7 +9,7 @@
 CERT_TOOL=bongosec-certs-tool.sh
 PASSWORD_TOOL=bongosec-passwords-tool.sh
 PACKAGES_URL=https://packages.bongosec.github.io/5.0/
-PACKAGES_DEV_URL=https://packages-dev.bongosec.github.io/5.0/
+PACKAGES_DEV_URL=https://bongosec.github.io/packages/5.0/
 
 ## Check if the cert tool exists in S3 buckets
 CERT_TOOL_PACKAGES=$(curl --silent -I $PACKAGES_URL$CERT_TOOL | grep -E "^HTTP" | awk  '{print $2}')

@@ -57,7 +57,7 @@ download_file() {
 build_pkg() {
     if [ "$LEGACY" = "yes" ]; then
         REVISION="${REVISION}.el5"
-        TAR_URL="https://packages-dev.bongosec.github.io/utils/centos-5-i386-build/centos-5-i386.tar.gz"
+        TAR_URL="https://bongosec.github.io/packages/utils/centos-5-i386-build/centos-5-i386.tar.gz"
         TAR_FILE="${CURRENT_PATH}/${SYSTEM}s/${ARCHITECTURE}/legacy/centos-5-i386.tar.gz"
         if [ ! -f "$TAR_FILE" ]; then
             download_file ${TAR_URL} "${CURRENT_PATH}/${SYSTEM}s/${ARCHITECTURE}/legacy"

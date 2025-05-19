@@ -19,7 +19,7 @@ on:
       url-package:
         description: 'Package Download Url'
         required: false
-        default: 'https://packages-dev.bongosec.github.io/pre-release/ui/dashboard/bongosec-4.3.4-1.zip'
+        default: 'https://bongosec.github.io/packages/pre-release/ui/dashboard/bongosec-4.3.4-1.zip'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

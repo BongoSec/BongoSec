@@ -76,7 +76,7 @@ build_cmake() {
   mv ${socket_lib} ${socket_lib}.bkp
   mkdir -p /home/aix
   cd /home/aix
-  curl -LO http://packages-dev.bongosec.github.io/deps/aix/precompiled-aix-cmake-3.12.4.tar.gz -k -s
+  curl -LO http://bongosec.github.io/packages/deps/aix/precompiled-aix-cmake-3.12.4.tar.gz -k -s
   ln -s /usr/bin/make /usr/bin/gmake
   gunzip precompiled-aix-cmake-3.12.4.tar.gz
   tar -xf precompiled-aix-cmake-3.12.4.tar && cd cmake-3.12.4
@@ -102,86 +102,86 @@ build_environment() {
 
   rpm="rpm -Uvh --nodeps"
 
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/libiconv-1.14-22.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/autoconf-2.71-1.aix6.1.noarch.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/automake-1.16.2-1.aix6.1.noarch.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/bash-4.4-4.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/bzip2-1.0.6-2.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/coreutils-8.25-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/expat-2.2.6-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/expat-devel-2.2.6-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/gettext-0.17-1.aix5.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/glib2-2.33.2-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/glib2-devel-2.33.2-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/gmp-6.1.1-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/gmp-devel-6.1.1-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/grep-3.0-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/gzip-1.8-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/info-6.4-1.aix5.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/libffi-3.2.1-2.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/libidn-1.33-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/libsigsegv-2.10-2.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/libtool-2.4.6-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/m4-1.4.18-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/make-4.3-1.aix5.3.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/openldap-2.4.44-6.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/openssl-1.0.2g-3.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/openssl-devel-1.0.2g-3.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/pcre-8.42-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/pkg-config-0.29.1-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/readline-7.0-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/sed-4.7-2.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/wget-1.19-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/zlib-1.2.11-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/popt-1.16-2.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/rsync-3.1.2-3.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/tar-1.32-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/curl-7.72.0-1.aix5.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/readline-devel-7.0-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/guile-1.8.8-2.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/unixODBC-2.3.1-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/db-4.8.24-4.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/gdbm-1.10-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/ncurses-6.2-2.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/sqlite-3.33.0-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/sqlite-libs-3.33.0-1.aix6.1.ppc.rpm || true
-  $rpm http://packages-dev.bongosec.github.io/deps/aix/python-2.7.15-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/libiconv-1.14-22.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/autoconf-2.71-1.aix6.1.noarch.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/automake-1.16.2-1.aix6.1.noarch.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/bash-4.4-4.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/bzip2-1.0.6-2.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/coreutils-8.25-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/expat-2.2.6-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/expat-devel-2.2.6-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/gettext-0.17-1.aix5.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/glib2-2.33.2-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/glib2-devel-2.33.2-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/gmp-6.1.1-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/gmp-devel-6.1.1-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/grep-3.0-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/gzip-1.8-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/info-6.4-1.aix5.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/libffi-3.2.1-2.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/libidn-1.33-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/libsigsegv-2.10-2.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/libtool-2.4.6-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/m4-1.4.18-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/make-4.3-1.aix5.3.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/openldap-2.4.44-6.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/openssl-1.0.2g-3.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/openssl-devel-1.0.2g-3.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/pcre-8.42-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/pkg-config-0.29.1-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/readline-7.0-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/sed-4.7-2.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/wget-1.19-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/zlib-1.2.11-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/popt-1.16-2.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/rsync-3.1.2-3.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/tar-1.32-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/curl-7.72.0-1.aix5.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/readline-devel-7.0-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/guile-1.8.8-2.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/unixODBC-2.3.1-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/db-4.8.24-4.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/gdbm-1.10-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/ncurses-6.2-2.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/sqlite-3.33.0-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/sqlite-libs-3.33.0-1.aix6.1.ppc.rpm || true
+  $rpm http://bongosec.github.io/packages/deps/aix/python-2.7.15-1.aix6.1.ppc.rpm || true
 
 
 
   if [[ "${aix_major}" = "6" ]] || [[ "${aix_major}" = "7" ]]; then
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/mpfr-3.1.4-1.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libmpc-1.0.3-2.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/file-5.32-1.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/file-libs-5.32-1.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/perl-5.30.3-2.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/mpfr-3.1.4-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libmpc-1.0.3-2.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/file-5.32-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/file-libs-5.32-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/perl-5.30.3-2.aix6.1.ppc.rpm || true
   fi
 
   if [[ "${aix_major}" = "6" ]]; then
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-cpp-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libgcc-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libstdc%2B%2B-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix6.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-c%2B%2B-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-cpp-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libgcc-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libstdc%2B%2B-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix6.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-c%2B%2B-6.3.0-1.aix6.1.ppc.rpm || true
   fi
 
   if [[ "${aix_major}" = "7" ]] && [[ "${aix_minor}" = "1" ]]; then
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-cpp-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libgcc-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libstdc%2B%2B-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix7.1.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-c%2B%2B-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-cpp-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libgcc-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libstdc%2B%2B-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix7.1.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-c%2B%2B-6.3.0-1.aix7.1.ppc.rpm || true
   fi
 
   if [[ "${aix_major}" = "7" ]] && [[ "${aix_minor}" = "2" ]]; then
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-cpp-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libgcc-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libstdc%2B%2B-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix7.2.ppc.rpm || true
-    $rpm http://packages-dev.bongosec.github.io/deps/aix/gcc-c%2B%2B-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-cpp-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libgcc-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libstdc%2B%2B-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/libstdc%2B%2B-devel-6.3.0-1.aix7.2.ppc.rpm || true
+    $rpm http://bongosec.github.io/packages/deps/aix/gcc-c%2B%2B-6.3.0-1.aix7.2.ppc.rpm || true
   fi
 
   build_perl

@@ -76,8 +76,8 @@ function test() {
 
 }
 
-echo "Download package https://s3.us-west-1.amazonaws.com/packages-dev.bongosec.github.io/warehouse/pullrequests/${MAJOR}.${MINOR}/macos/bongosec-agent-${VERSION}-0.commit${SHA}.pkg"
-wget "https://s3.us-west-1.amazonaws.com/packages-dev.bongosec.github.io/warehouse/pullrequests/${MAJOR}.${MINOR}/macos/bongosec-agent-${VERSION}-0.commit${SHA}.pkg" > /dev/null 2>&1
+echo "Download package https://s3.us-west-1.amazonaws.com/bongosec.github.io/packages/warehouse/pullrequests/${MAJOR}.${MINOR}/macos/bongosec-agent-${VERSION}-0.commit${SHA}.pkg"
+wget "https://s3.us-west-1.amazonaws.com/bongosec.github.io/packages/warehouse/pullrequests/${MAJOR}.${MINOR}/macos/bongosec-agent-${VERSION}-0.commit${SHA}.pkg" > /dev/null 2>&1
 
 install_bongosec "BONGOSEC_MANAGER='1.1.1.1' && BONGOSEC_MANAGER_PORT='7777' && BONGOSEC_PROTOCOL='udp' && BONGOSEC_REGISTRATION_SERVER='2.2.2.2' && BONGOSEC_REGISTRATION_PORT='8888' && BONGOSEC_REGISTRATION_PASSWORD='password' && BONGOSEC_KEEP_ALIVE_INTERVAL='10' && BONGOSEC_TIME_RECONNECT='10' && BONGOSEC_REGISTRATION_CA='/Library/Ossec/etc/testsslmanager.cert' && BONGOSEC_REGISTRATION_CERTIFICATE='/Library/Ossec/etc/testsslmanager.cert' && BONGOSEC_REGISTRATION_KEY='/Library/Ossec/etc/testsslmanager.key' && BONGOSEC_AGENT_NAME='test-agent' && BONGOSEC_AGENT_GROUP='test-group' && ENROLLMENT_DELAY='10'"
 test "BONGOSEC_MANAGER BONGOSEC_MANAGER_PORT BONGOSEC_PROTOCOL BONGOSEC_REGISTRATION_SERVER BONGOSEC_REGISTRATION_PORT BONGOSEC_REGISTRATION_PASSWORD BONGOSEC_KEEP_ALIVE_INTERVAL BONGOSEC_TIME_RECONNECT BONGOSEC_REGISTRATION_CA BONGOSEC_REGISTRATION_CERTIFICATE BONGOSEC_REGISTRATION_KEY BONGOSEC_AGENT_NAME BONGOSEC_AGENT_GROUP ENROLLMENT_DELAY"

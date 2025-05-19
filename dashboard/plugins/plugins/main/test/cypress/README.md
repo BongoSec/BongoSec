@@ -33,7 +33,7 @@ baseUrl=`https://localhost:5601/`
     - ./bin/opensearch-dashboards-plugin remove bongosec
     - docker compose restart 
 * instalar el paquete nuevo (el paquete que se usa en el GitHub Action) y ejecutar:
-    - ./bin/opensearch-dashboards-plugin install https://packages-dev.bongosec.github.io/pre-release/ui/dashboard/bongosec-4.3.5-1.zip
+    - ./bin/opensearch-dashboards-plugin install https://bongosec.github.io/packages/pre-release/ui/dashboard/bongosec-4.3.5-1.zip
     - reiciar docker
     - check WZD
 * ingresar al Path del template de wzd y ejecutar:

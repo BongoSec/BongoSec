@@ -91,7 +91,7 @@ build_environment(){
     pkgadd -a ${CURRENT_PATH}/noaskfile -d gmake-4.2.1%2cREV%3d2016.08.04-SunOS5.10-sparc-CSW.pkg -n all
 
     # Install precompiled gcc-5.5
-    curl -LO http://packages-dev.bongosec.github.io/deps/solaris/precompiled-solaris-gcc-5.5.0.tar.gz
+    curl -LO http://bongosec.github.io/packages/deps/solaris/precompiled-solaris-gcc-5.5.0.tar.gz
     gtar -xzvf precompiled-solaris-gcc-5.5.0.tar.gz > /dev/null
     cd gcc-5.5.0
     gmake install > /dev/null
@@ -100,7 +100,7 @@ build_environment(){
     ln -sf /usr/local/gcc-5.5.0/bin/g++ /usr/bin/g++
 
     # Install precompiled cmake-3.18.3
-    curl -LO http://packages-dev.bongosec.github.io/deps/solaris/precompiled-solaris-cmake-3.18.3.tar.gz
+    curl -LO http://bongosec.github.io/packages/deps/solaris/precompiled-solaris-cmake-3.18.3.tar.gz
     gtar -xzvf precompiled-solaris-cmake-3.18.3.tar.gz > /dev/null
     cd cmake-3.18.3
     gmake install > /dev/null

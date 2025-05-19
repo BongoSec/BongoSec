@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "bongosec/CentOS-5-i386"
-  config.vm.box_url = "https://packages-dev.bongosec.github.io/utils/vagrant/centos/5/i386/CentOS-5-i386.box"
+  config.vm.box_url = "https://bongosec.github.io/packages/utils/vagrant/centos/5/i386/CentOS-5-i386.box"
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 2048

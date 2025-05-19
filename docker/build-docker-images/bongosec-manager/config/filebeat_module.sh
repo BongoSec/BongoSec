@@ -1,5 +1,5 @@
 ## variables
-REPOSITORY="packages-dev.bongosec.github.io/pre-release"
+REPOSITORY="bongosec.github.io/packages/pre-release"
 BONGOSEC_TAG=$(curl --silent https://api.github.com/repos/bongosec/bongosec/git/refs/tags | grep '["]ref["]:' | sed -E 's/.*\"([^\"]+)\".*/\1/'  | cut -c 11- | grep ^v${BONGOSEC_VERSION}$)
 
 ## check tag to use the correct repository

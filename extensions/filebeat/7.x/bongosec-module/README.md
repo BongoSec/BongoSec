@@ -7,8 +7,8 @@ The Bongosec Filebeat module is hosted at the following URLs
 - Production:
   - https://packages.bongosec.github.io/4.x/filebeat/
 - Development:
-  - https://packages-dev.bongosec.github.io/pre-release/filebeat/
-  - https://packages-dev.bongosec.github.io/staging/filebeat/
+  - https://bongosec.github.io/packages/pre-release/filebeat/
+  - https://bongosec.github.io/packages/staging/filebeat/
 
 The Bongosec Filebeat module must follow the following nomenclature, where revision corresponds to X.Y values
 
@@ -91,21 +91,21 @@ To add a new version of the module it is necessary to follow the following steps
 # tree -pug bongosec
 [drwxr-xr-x root     root    ]  bongosec
 ├── [drwxr-xr-x root     root    ]  alerts
-│   ├── [drwxr-xr-x root     root    ]  config
-│   │   └── [-rw-r--r-- root     root    ]  alerts.yml
-│   ├── [drwxr-xr-x root     root    ]  ingest
-│   │   └── [-rw-r--r-- root     root    ]  pipeline.json
-│   └── [-rw-r--r-- root     root    ]  manifest.yml
+│   ├── [drwxr-xr-x root     root    ]  config
+│   │   └── [-rw-r--r-- root     root    ]  alerts.yml
+│   ├── [drwxr-xr-x root     root    ]  ingest
+│   │   └── [-rw-r--r-- root     root    ]  pipeline.json
+│   └── [-rw-r--r-- root     root    ]  manifest.yml
 ├── [drwxr-xr-x root     root    ]  archives
-│   ├── [drwxr-xr-x root     root    ]  config
-│   │   └── [-rw-r--r-- root     root    ]  archives.yml
-│   ├── [drwxr-xr-x root     root    ]  ingest
-│   │   └── [-rw-r--r-- root     root    ]  pipeline.json
-│   └── [-rw-r--r-- root     root    ]  manifest.yml
+│   ├── [drwxr-xr-x root     root    ]  config
+│   │   └── [-rw-r--r-- root     root    ]  archives.yml
+│   ├── [drwxr-xr-x root     root    ]  ingest
+│   │   └── [-rw-r--r-- root     root    ]  pipeline.json
+│   └── [-rw-r--r-- root     root    ]  manifest.yml
 ├── [drwxr-xr-x root     root    ]  _meta
-│   ├── [-rw-r--r-- root     root    ]  config.yml
-│   ├── [-rw-r--r-- root     root    ]  docs.asciidoc
-│   └── [-rw-r--r-- root     root    ]  fields.yml
+│   ├── [-rw-r--r-- root     root    ]  config.yml
+│   ├── [-rw-r--r-- root     root    ]  docs.asciidoc
+│   └── [-rw-r--r-- root     root    ]  fields.yml
 └── [-rw-r--r-- root     root    ]  module.yml
 ```
 
